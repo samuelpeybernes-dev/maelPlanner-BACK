@@ -1,3 +1,3 @@
-import projectNoteSchema from './projectNoteSchema.js'
+import projectNotePersonalizationSchema from './projectNotePersonalizationSchema.js'
 
-export { projectNoteSchema as projectNote }
+export { projectNotePersonalizationSchema as ProjectNotesPersonalizationJoi }
