@@ -1,8 +1,8 @@
 import ProjectNote from '../../schemas/mongoose/projectNoteSchema.js'
 
-async function createProjectNote(projectNote) {
+async function createUpdateScheduleJob(projectNote) {
   try {
-    const result = await ProjectNote.findOneAndUpdate({ projectId: projectNote.projectId }, projectNote, {
+    const result = await ProjectNote.findOneAndUpdate({ id: projectNote.projectId }, projectNote, {
       new: true,
       upsert: true, // Permet de créer si on ne trouve pas de correspondance
     })
@@ -11,4 +11,4 @@ async function createProjectNote(projectNote) {
     console.error(error)
   }
 }
-export default createProjectNote
+export default createUpdateScheduleJob

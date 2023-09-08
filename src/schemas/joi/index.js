@@ -1,3 +1,3 @@
-import projectNotePersonalizationSchema from './projectNotePersonalizationSchema.js'
+import scheduleJobSchema from './scheduleJobSchema.js'
 
-export { projectNotePersonalizationSchema as ProjectNotesPersonalizationJoi }
+export { scheduleJobSchema as scheduleJobJoi }
