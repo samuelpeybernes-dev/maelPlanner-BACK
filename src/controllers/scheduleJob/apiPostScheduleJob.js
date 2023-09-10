@@ -1,9 +1,9 @@
-import createScheduleJob from '../../dao/mongo/createScheduleJob'
+import createUpdateScheduleJob from '../../dao/mongo/createUpdateScheduleJob'
 
 async function apiPostScheduleJob(req, res) {
   try {
     const { scheduleJobJoi } = req.body
-    const scheduleJob = await createScheduleJob(scheduleJobJoi)
+    const scheduleJob = await createUpdateScheduleJob(scheduleJobJoi)
 
     return res.status(200).json({ message: 'ok ' + scheduleJob })
   } catch (error) {

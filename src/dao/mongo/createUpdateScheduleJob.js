@@ -1,12 +1,39 @@
-import ProjectNote from '../../schemas/mongoose/projectNoteSchema.js'
+import scheduleJob from '../../schemas/mongoose/scheduleJobSchema.js'
 
-async function createUpdateScheduleJob(projectNote) {
+async function createUpdateScheduleJob(scheduleJobJoi) {
   try {
-    const result = await ProjectNote.findOneAndUpdate({ id: projectNote.projectId }, projectNote, {
-      new: true,
-      upsert: true, // Permet de créer si on ne trouve pas de correspondance
-    })
-    return result
+    const { id, newStart, newEnd, newText, newBackColor, newBorderColor: newBorderColor } = scheduleJobJoi
+    const query = { id: id }
+
+    // Rechercher le document avec le même 'id'
+    const existingScheduleJob = await scheduleJob.findOne(query)
+
+    if (existingScheduleJob) {
+      // Le document existe, vous pouvez mettre à jour ses propriétés ici
+      existingScheduleJob.start = newStart
+      existingScheduleJob.end = newEnd
+      existingScheduleJob.text = newText
+      existingScheduleJob.backColor = newBackColor
+      existingScheduleJob.borderColor = newBorderColor
+
+      // Mettre à jour le document dans la base de données
+      await existingScheduleJob.save()
+      return 'schedule job updated'
+    } else {
+      // Le document n'existe pas, vous pouvez en créer un nouveau ici
+      const newScheduleJob = new scheduleJob({
+        id: id,
+        start: newStart,
+        end: newEnd,
+        text: newText,
+        backColor: newBackColor,
+        borderColor: newBorderColor,
+      })
+
+      // Enregistrer le nouveau document dans la base de données
+      await newScheduleJob.save()
+      return 'schedule job created'
+    }
   } catch (error) {
     console.error(error)
   }
