@@ -3,23 +3,17 @@ const { Schema } = mongoose
 
 const scheduleJobSchema = new Schema(
   {
-    priorities: {
-      type: [
-        { 
-        id: Number, 
-        start: Date, 
-        end: Date, 
-        text: String, 
-        backColor: String, 
-        borderColor: String 
-        }
-      ],
-      required: true,
-    },
+    id: Number, 
+    start: Date, 
+    end: Date, 
+    text: String, 
+    backColor: String, 
+    borderColor: String 
   },
   {
     collection: 'scheduleJob',
     versionKey: false,
+    required: true,
   }
 )
 

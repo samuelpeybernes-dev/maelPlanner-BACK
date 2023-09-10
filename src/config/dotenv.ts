@@ -15,7 +15,7 @@ switch (process.env.NODE_ENV) {
 }
 dotenv.config({ path: dotenvPath })
 
-export const mongoUrl: string = `mongodb+srv://root:sam30127@sam-dev.a6whj1z.mongodb.net`
+export const mongoUrl: string = `mongodb+srv://root:sam30127@sam-dev.a6whj1z.mongodb.net/maelPlanner?authSource=admin&w=1`
 
 export const NODE_ENV: string = process.env.NODE_ENV!
 export const BAGDAD_PORT: number = NODE_ENV === 'development' ? 1632 : 1631
