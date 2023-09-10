@@ -3,9 +3,7 @@ import getScheduleJob from '../../dao/mongo/getScheduleJob.js'
 
 async function apiGetScheduleJob(req, res) {
   try {
-    if (!req.query.hasOwnProperty('id')) throw new ValidationError('Please send an schedule id ')
-    const scheduleJobId = req.query.id
-    const scheduleJob = await getScheduleJob(scheduleJobId)
+    const scheduleJob = await getScheduleJob()
    
 
     return res.json({ scheduleJob })
