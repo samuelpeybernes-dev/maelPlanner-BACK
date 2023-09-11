@@ -3,9 +3,9 @@ const { Schema } = mongoose
 
 const scheduleJobSchema = new Schema(
   {
-    id: Number, 
-    start: Date, 
-    end: Date, 
+    id: String, 
+    start: String, 
+    end: String, 
     text: String, 
     backColor: String, 
     borderColor: String 

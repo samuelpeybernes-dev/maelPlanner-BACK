@@ -2,8 +2,8 @@ import Joi from 'joi'
 
 const scheduleJobSchema = Joi.object({
   id: Joi.string(),
-  newStart: Joi.string().isoDate(),
-  newEnd: Joi.string().isoDate(),
+  newStart: Joi.string(),
+  newEnd: Joi.string(),
   newText: Joi.string()
     .regex(/^[a-zA-ZÀ-ÿ0-9\s'-.?!]+$/u)
     .min(1)
