@@ -1,0 +1,62 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "scheduleJob",
+    "dateExported": "2023-09-11T21:40:13.343Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "37d7d7c5-dd78-41e9-8084-c0dc14c83aa1",
+            "colId": "348f56d3-3538-4413-b651-18e9600f9d83",
+            "containerId": "",
+            "name": "getScheduleJob",
+            "url": "http://localhost:1631/api/v1/scheduleJob/getSchedule",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-09-10T13:02:47.838Z",
+            "modified": "2023-09-11T21:14:04.016Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "bd3598e1-2a93-4f9f-a9a5-edf214fc7c69",
+            "colId": "348f56d3-3538-4413-b651-18e9600f9d83",
+            "containerId": "",
+            "name": "postScheduleJob",
+            "url": "http://localhost:1631/api/v1/scheduleJob/postSchedule",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-09-10T13:03:13.729Z",
+            "modified": "2023-09-10T20:26:45.915Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"scheduleJobJoi\":\n    {\n    \"id\": 2,\n    \"newStart\":\"2023-09-04T06:00:00.000Z\",\n    \"newEnd\":\"2023-09-04T06:00:00.000Z\",\n    \"newText\":\"Decathlon\",\n    \"newBackColor\":\"testb\",\n    \"newBorderColor\":\"testc\"\n    }\n  \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9937c910-2804-461d-8af6-f528e7de4564",
+            "colId": "348f56d3-3538-4413-b651-18e9600f9d83",
+            "containerId": "",
+            "name": "deleteScheduleJob",
+            "url": "http://localhost:1631/api/v1/scheduleJob/deleteSchedule?id=371e0431-10cc-5b98-b1da-795050112d92",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2023-09-11T21:13:44.962Z",
+            "modified": "2023-09-11T21:30:31.882Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "371e0431-10cc-5b98-b1da-795050112d92",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        }
+    ]
+}
