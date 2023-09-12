@@ -3,6 +3,7 @@ import cors from 'cors'
 import morgan from 'morgan'
 import helmet from 'helmet'
 import scheduleJob from '../routes/scheduleJob'
+import scheduleClass from '../routes/scheduleClass'
 // import authMiddleware from '../middlewares/authMiddleware.js'
 
 
@@ -18,6 +19,7 @@ app.get('/api/v1', (req, res) => res.json("Bienvenue sur la v1 de l'api ⏲"))
 
 // app.use('/api/v1/scheduleJob', authMiddleware, scheduleJob)
 app.use('/api/v1/scheduleJob', scheduleJob)
+app.use('/api/v1/scheduleClass', scheduleClass)
 
 app.use('*', (req, res) =>
   res.status(404).json({
