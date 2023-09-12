@@ -18,8 +18,6 @@ const scheduleClassSchema = new Schema(
     start: String, 
     end: String, 
     text: String, 
-    backColor: String, 
-    borderColor: String,
     subject_id: String,
   },
   {

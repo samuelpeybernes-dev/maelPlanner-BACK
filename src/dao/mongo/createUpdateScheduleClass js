@@ -1,0 +1,41 @@
+import scheduleClass from '../../schemas/mongoose/scheduleClassSchema.js'
+
+async function createUpdateScheduleClass(scheduleJobJoi) {
+  try {
+    const { id, newStart, newEnd, newText, newBackColor, newBorderColor: newBorderColor } = scheduleJobJoi
+    const query = { id: id }
+
+    // Rechercher le document avec le même 'id'
+    const existingScheduleClass = await scheduleClass.findOne(query)
+
+    if (existingScheduleClass) {
+      // Le document existe, vous pouvez mettre à jour ses propriétés ici
+      existingScheduleClass.start = newStart
+      existingScheduleClass.end = newEnd
+      existingScheduleClass.text = newText
+      existingScheduleClass.backColor = newBackColor
+      existingScheduleClass.borderColor = newBorderColor
+
+      // Mettre à jour le document dans la base de données
+      await existingScheduleClass.save()
+      return 'schedule job updated'
+    } else {
+      // Le document n'existe pas, vous pouvez en créer un nouveau ici
+      const newScheduleJob = new scheduleJob({
+        id: id,
+        start: newStart,
+        end: newEnd,
+        text: newText,
+        backColor: newBackColor,
+        borderColor: newBorderColor,
+      })
+
+      // Enregistrer le nouveau document dans la base de données
+      await newScheduleJob.save()
+      return 'schedule job created'
+    }
+  } catch (error) {
+    console.error(error)
+  }
+}
+export default createUpdateScheduleClass
