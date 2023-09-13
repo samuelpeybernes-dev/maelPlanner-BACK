@@ -1,6 +1,6 @@
 import Joi from 'joi'
 
-const scheduleJobSchema = Joi.object({
+const scheduleClassSchema = Joi.object({
   id: Joi.string().required(),
   newStart: Joi.string().required(),
   newEnd: Joi.string().required(),
@@ -8,9 +8,7 @@ const scheduleJobSchema = Joi.object({
     .regex(/^[a-zA-ZÀ-ÿ0-9\s'-.?!]+$/u)
     .min(1)
     .max(50),
-  newJob: Joi.boolean().required(),
-  newBackColor: Joi.string(),
-  newBorderColor: Joi.string(),
+  subject_id: Joi.string().required(),
 })
 
-export default scheduleJobSchema
+export default scheduleClassSchema

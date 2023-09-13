@@ -1,38 +1,40 @@
 import scheduleClass from '../../schemas/mongoose/scheduleClassSchema.js'
-
-async function createUpdateScheduleClass(scheduleJobJoi) {
+import hoursSubject from '../../schemas/mongoose/hoursSubjectSchema.js'
+async function createUpdateScheduleClass(scheduleClassJoi) {
   try {
-    const { id, newStart, newEnd, newText, newBackColor, newBorderColor: newBorderColor } = scheduleJobJoi
-    const query = { id: id }
+    const { id, subject_id, newStart, newEnd, newText } = scheduleClassJoi
+ 
+    const correspondingHoursSubject = await hoursSubject.findById(subject_id);
 
-    // Rechercher le document avec le même 'id'
-    const existingScheduleClass = await scheduleClass.findOne(query)
+    const existingScheduleClass = await scheduleClass.findOne({id: id})
+
+    if (!correspondingHoursSubject) {
+      return 'HoursSubject not found';
+    }
 
     if (existingScheduleClass) {
       // Le document existe, vous pouvez mettre à jour ses propriétés ici
       existingScheduleClass.start = newStart
       existingScheduleClass.end = newEnd
       existingScheduleClass.text = newText
-      existingScheduleClass.backColor = newBackColor
-      existingScheduleClass.borderColor = newBorderColor
+      existingScheduleClass.subject_id = correspondingHoursSubject._id
 
       // Mettre à jour le document dans la base de données
       await existingScheduleClass.save()
-      return 'schedule job updated'
+      return 'schedule class updated'
     } else {
       // Le document n'existe pas, vous pouvez en créer un nouveau ici
-      const newScheduleJob = new scheduleJob({
+      const newScheduleClass = new scheduleClass({
         id: id,
         start: newStart,
         end: newEnd,
         text: newText,
-        backColor: newBackColor,
-        borderColor: newBorderColor,
+        subject_id: correspondingHoursSubject._id,
       })
 
       // Enregistrer le nouveau document dans la base de données
-      await newScheduleJob.save()
-      return 'schedule job created'
+      await newScheduleClass.save()
+      return 'schedule class created'
     }
   } catch (error) {
     console.error(error)

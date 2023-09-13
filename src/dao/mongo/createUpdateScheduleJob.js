@@ -2,7 +2,7 @@ import scheduleJob from '../../schemas/mongoose/scheduleJobSchema.js'
 
 async function createUpdateScheduleJob(scheduleJobJoi) {
   try {
-    const { id, newStart, newEnd, newText, newBackColor, newBorderColor: newBorderColor } = scheduleJobJoi
+    const { id, newStart, newEnd, newText, newJob, newBackColor, newBorderColor } = scheduleJobJoi
     const query = { id: id }
 
     // Rechercher le document avec le même 'id'
@@ -13,6 +13,7 @@ async function createUpdateScheduleJob(scheduleJobJoi) {
       existingScheduleJob.start = newStart
       existingScheduleJob.end = newEnd
       existingScheduleJob.text = newText
+      existingScheduleJob.job = newJob
       existingScheduleJob.backColor = newBackColor
       existingScheduleJob.borderColor = newBorderColor
 
@@ -26,6 +27,7 @@ async function createUpdateScheduleJob(scheduleJobJoi) {
         start: newStart,
         end: newEnd,
         text: newText,
+        job: newJob,
         backColor: newBackColor,
         borderColor: newBorderColor,
       })

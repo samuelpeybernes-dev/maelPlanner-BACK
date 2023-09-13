@@ -6,5 +6,7 @@ const router = express.Router()
 
 router.route('/getSchedule').get(scheduleClass.apiGetScheduleClass)
 
+router.route('/postSchedule').post(validateIncomingData, scheduleClass.apiPostScheduleClass)
+
 
 export default router

@@ -1,24 +1,13 @@
 import mongoose from 'mongoose'
 const { Schema } = mongoose
 
-const hoursSubjectSchema = new Schema(
-  {
-    text: String,
-  },
-  {
-    collection: 'hoursSubject',
-    versionKey: false,
-    required: true,
-  }
-)
-
 const scheduleClassSchema = new Schema(
   {
     id: String, 
     start: String, 
     end: String, 
     text: String, 
-    subject_id: String,
+    subject_id: Schema.Types.ObjectId,
   },
   {
     collection: 'scheduleClasse',
@@ -27,8 +16,7 @@ const scheduleClassSchema = new Schema(
   }
 )
 
-const hoursSubject = mongoose.model('hoursSubject', hoursSubjectSchema)
-const scheduleClass = mongoose.model('scheduleClass', scheduleClassSchema)
+const scheduleClass = mongoose.model('scheduleClasse', scheduleClassSchema)
 
 
-export default {scheduleClass, hoursSubject}
+export default scheduleClass

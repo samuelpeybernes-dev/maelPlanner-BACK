@@ -7,6 +7,7 @@ const scheduleJobSchema = new Schema(
     start: String, 
     end: String, 
     text: String, 
+    job: Boolean,
     backColor: String, 
     borderColor: String 
   },

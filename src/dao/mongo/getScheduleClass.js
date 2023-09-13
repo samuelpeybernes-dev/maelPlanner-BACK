@@ -1,7 +1,7 @@
 import scheduleClassSchema from '../../schemas/mongoose/scheduleClassSchema.js'
 
 async function getScheduleClass() {
-  const schedule = await scheduleClassSchema.scheduleClass.aggregate().lookup({
+  const schedule = await scheduleClassSchema.aggregate().lookup({
     from: 'hoursSubject',
     localField: 'subject_id',
     foreignField: '_id',

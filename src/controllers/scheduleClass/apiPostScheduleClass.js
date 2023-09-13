@@ -1,4 +1,4 @@
-import createUpdateScheduleClass from '../../dao/mongo/createUpdateScheduleJob'
+import createUpdateScheduleClass from '../../dao/mongo/createUpdateScheduleClass.js'
 
 async function apiPostScheduleClass(req, res) {
   try {
