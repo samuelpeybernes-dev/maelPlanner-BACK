@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "scheduleClass",
-    "dateExported": "2023-09-12T16:18:20.435Z",
+    "dateExported": "2023-09-13T23:40:23.457Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -17,6 +17,25 @@
             "modified": "2023-09-12T16:18:12.137Z",
             "headers": [],
             "params": [],
+            "tests": []
+        },
+        {
+            "_id": "faa3fe3b-0c92-40e4-b240-477083f4bba3",
+            "colId": "30f9a931-ee02-49ec-b505-967281998244",
+            "containerId": "",
+            "name": "postScheduleClass",
+            "url": "http://localhost:1631/api/v1/scheduleClass/postSchedule",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-09-13T17:20:13.870Z",
+            "modified": "2023-09-13T22:20:49.935Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"scheduleClassJoi\": {\n    \"id\": \"eheh64646725yeye\",\n    \"newStart\": \"2023-09-13T06:00:00.000Z\",\n    \"newEnd\": \"2023-09-13T11:00:00.000Z\",\n    \"newText\": \"Biochimie\",\n    \"subject_id\": \"6500a198ae2507564a499ff1\"\n  }\n}",
+                "form": []
+            },
             "tests": []
         }
     ]
