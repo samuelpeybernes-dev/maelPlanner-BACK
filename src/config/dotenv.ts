@@ -13,8 +13,7 @@ switch (process.env.NODE_ENV) {
   default:
     dotenvPath = path.join(__dirname, '.env')
 }
-//path: dotenvPath 
-dotenv.config({ example: '../.env.example', allowEmptyValues: true})
+dotenv.config({ path: dotenvPath })
 
 export const mongoUrl: string = `mongodb+srv://root:sam30127@sam-dev.a6whj1z.mongodb.net/maelPlanner?authSource=admin&w=1`
 
