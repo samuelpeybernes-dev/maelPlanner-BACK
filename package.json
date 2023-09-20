@@ -15,8 +15,8 @@
   "pre-commit": [
     "ts.check",
     "build",
-    "copy-env",
-    "add-build"
+    "add-build",
+    "copy-env"
   ],
   "author": "",
   "license": "ISC",
