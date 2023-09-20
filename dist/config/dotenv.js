@@ -23,7 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.JWT_PUB_KEY_PATH = exports.REQUIRE_AUTH = exports.BAGDAD_PORT = exports.NODE_ENV = exports.mongoUrl = void 0;
+exports.mongoUrl = void 0;
 const dotenv = __importStar(require("dotenv-safe"));
 dotenv.config();
 let dotenvPath;
@@ -39,9 +39,9 @@ switch (process.env.NODE_ENV) {
 }
 dotenv.config({ path: dotenvPath });
 exports.mongoUrl = `mongodb+srv://root:sam30127@sam-dev.a6whj1z.mongodb.net/maelPlanner?authSource=admin&w=1`;
-exports.NODE_ENV = process.env.NODE_ENV;
-exports.BAGDAD_PORT = exports.NODE_ENV === 'development' ? 1632 : 1631;
+//export const NODE_ENV: string = process.env.NODE_ENV!
+//export const BAGDAD_PORT: number = NODE_ENV === 'development' ? 1632 : 1631
 // eslint-disable-next-line eqeqeq
-exports.REQUIRE_AUTH = exports.NODE_ENV === 'production' || process.env.REQUIRE_AUTH !== 'false';
-exports.JWT_PUB_KEY_PATH = process.env.JWT_PUB_KEY_PATH;
+//export const REQUIRE_AUTH: boolean = NODE_ENV === 'production' || process.env.REQUIRE_AUTH! !== 'false'
+//export const JWT_PUB_KEY_PATH: string = process.env.JWT_PUB_KEY_PATH!
 //# sourceMappingURL=dotenv.js.map
