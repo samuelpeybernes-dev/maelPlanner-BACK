@@ -29,13 +29,13 @@ dotenv.config();
 let dotenvPath;
 switch (process.env.NODE_ENV) {
     case 'test':
-        dotenvPath = '.env.example';
+        dotenvPath = '../.env.example';
         break;
     case 'production':
-        dotenvPath = '.env.example';
+        dotenvPath = '../.env.example';
         break;
     default:
-        dotenvPath = '.env.example';
+        dotenvPath = '../.env.example';
 }
 dotenv.config({ path: dotenvPath });
 exports.mongoUrl = `mongodb+srv://root:sam30127@sam-dev.a6whj1z.mongodb.net/maelPlanner?authSource=admin&w=1`;

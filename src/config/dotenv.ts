@@ -5,13 +5,13 @@ dotenv.config()
 let dotenvPath
 switch (process.env.NODE_ENV) {
   case 'test':
-    dotenvPath = '.env.example'; 
+    dotenvPath = '../.env.example'; 
     break
   case 'production':
-    dotenvPath = '.env.example'; 
+    dotenvPath = '../.env.example'; 
     break
   default:
-    dotenvPath = '.env.example'; 
+    dotenvPath = '../.env.example'; 
 }
 dotenv.config({ path: dotenvPath })
 
