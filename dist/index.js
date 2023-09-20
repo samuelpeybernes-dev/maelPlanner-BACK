@@ -5,10 +5,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const app_1 = __importDefault(require("./config/app"));
-const dotenv_1 = require("./config/dotenv");
+//import {  mongoUrl } from './config/dotenv'
 async function main() {
     try {
-        await mongoose_1.default.connect(dotenv_1.mongoUrl);
+        await mongoose_1.default.connect("mongodb+srv://root:sam30127@sam-dev.a6whj1z.mongodb.net/maelPlanner?authSource=admin&w=1");
         console.log(`MongoDB database connected.`);
         //    "start": "node -r ts-node/register/transpile-only -r tsconfig-paths/register ./dist/index.js",
         app_1.default.listen(1631, '0.0.0.0', () => console.log(`Listening on port : 1631`));

@@ -1,47 +1,31 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.mongoUrl = void 0;
-const dotenv = __importStar(require("dotenv-safe"));
-dotenv.config();
-let dotenvPath;
+/*import * as dotenv from 'dotenv-safe'
+import path from 'path'
+
+dotenv.config()
+let dotenvPath
 switch (process.env.NODE_ENV) {
-    case 'test':
-        dotenvPath = '../.env.example';
-        break;
-    case 'production':
-        dotenvPath = '../.env.example';
-        break;
-    default:
-        dotenvPath = '../.env.example';
+  case 'test':
+    dotenvPath = '../.env.example';
+    break
+  case 'production':
+    dotenvPath = '../.env.example';
+    break
+  default:
+    dotenvPath = '../.env.example';
 }
-dotenv.config({ path: dotenvPath });
-exports.mongoUrl = `mongodb+srv://root:sam30127@sam-dev.a6whj1z.mongodb.net/maelPlanner?authSource=admin&w=1`;
+dotenv.config({ path: dotenvPath })
+
+
+
+export const mongoUrl: string = `mongodb+srv://root:sam30127@sam-dev.a6whj1z.mongodb.net/maelPlanner?authSource=admin&w=1`
+
 //export const NODE_ENV: string = process.env.NODE_ENV!
 //export const BAGDAD_PORT: number = NODE_ENV === 'development' ? 1632 : 1631
 // eslint-disable-next-line eqeqeq
 //export const REQUIRE_AUTH: boolean = NODE_ENV === 'production' || process.env.REQUIRE_AUTH! !== 'false'
+
+
 //export const JWT_PUB_KEY_PATH: string = process.env.JWT_PUB_KEY_PATH!
+*/ 
 //# sourceMappingURL=dotenv.js.map

@@ -1,4 +1,4 @@
-import * as dotenv from 'dotenv-safe'
+/*import * as dotenv from 'dotenv-safe'
 import path from 'path'
 
 dotenv.config()
@@ -26,3 +26,4 @@ export const mongoUrl: string = `mongodb+srv://root:sam30127@sam-dev.a6whj1z.mon
 
 
 //export const JWT_PUB_KEY_PATH: string = process.env.JWT_PUB_KEY_PATH!
+*/
