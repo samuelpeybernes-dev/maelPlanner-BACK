@@ -42,7 +42,7 @@ switch (process.env.NODE_ENV) {
         dotenvPath = path_1.default.join(__dirname, '.env');
 }
 //path: dotenvPath 
-dotenv.config({ example: '.env.example', allowEmptyValues: true });
+dotenv.config({ example: '../.env.example', allowEmptyValues: true });
 exports.mongoUrl = `mongodb+srv://root:sam30127@sam-dev.a6whj1z.mongodb.net/maelPlanner?authSource=admin&w=1`;
 exports.NODE_ENV = process.env.NODE_ENV;
 exports.BAGDAD_PORT = exports.NODE_ENV === 'development' ? 1632 : 1631;
