@@ -1,0 +1,1 @@
+{"version":3,"file":"roundDecimals.js","sourceRoot":"","sources":["../../src/utils/roundDecimals.js"],"names":[],"mappings":";;AAAA,kBAAe,CAAC,GAAG,EAAE,gBAAgB,GAAG,CAAC,EAAE,EAAE;IAC3C,IAAI,KAAK,CAAC,GAAG,CAAC,EAAE;QACd,OAAO,GAAG,CAAA;KACX;IAED,MAAM,UAAU,GAAG,EAAE,IAAI,gBAAgB,CAAA;IACzC,OAAO,IAAI,CAAC,KAAK,CAAC,GAAG,GAAG,UAAU,CAAC,GAAG,UAAU,CAAA;AAClD,CAAC,CAAA"}

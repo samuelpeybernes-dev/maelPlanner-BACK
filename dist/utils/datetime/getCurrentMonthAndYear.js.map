@@ -1,0 +1,1 @@
+{"version":3,"file":"getCurrentMonthAndYear.js","sourceRoot":"","sources":["../../../src/utils/datetime/getCurrentMonthAndYear.js"],"names":[],"mappings":";;AAAA,uCAAuD;AAEvD,SAAS,sBAAsB;IAC7B,MAAM,KAAK,GAAG,IAAI,IAAI,EAAE,CAAA;IACxB,OAAO;QACL,iBAAiB,EAAE,IAAA,uBAAY,EAAC,KAAK,CAAC;QACtC,eAAe,EAAE,IAAA,yBAAc,EAAC,KAAK,CAAC;KACvC,CAAA;AACH,CAAC;AAED,kBAAe,sBAAsB,CAAA"}
