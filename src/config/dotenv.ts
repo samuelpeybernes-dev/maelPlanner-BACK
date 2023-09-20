@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv-safe'
 
 
-dotenv.config()
+//dotenv.config()
 
 
 const MONGO_DB_HOST: string = process.env.MONGO_DB_HOST!
