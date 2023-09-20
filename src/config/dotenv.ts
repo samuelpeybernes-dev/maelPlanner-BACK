@@ -4,14 +4,11 @@ import path from 'path'
 dotenv.config()
 let dotenvPath
 switch (process.env.NODE_ENV) {
-  case 'test':
+  case 'development':
     dotenvPath = path.join(__dirname, '.env')
     break
   case 'production':
-    dotenvPath = path.join(__dirname, '.env')
     break
-  default:
-    dotenvPath = path.join(__dirname, '.env') 
 }
 dotenv.config({ path: dotenvPath })
 

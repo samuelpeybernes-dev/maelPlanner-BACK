@@ -32,14 +32,11 @@ const path_1 = __importDefault(require("path"));
 dotenv.config();
 let dotenvPath;
 switch (process.env.NODE_ENV) {
-    case 'test':
+    case 'development':
         dotenvPath = path_1.default.join(__dirname, '.env');
         break;
     case 'production':
-        dotenvPath = path_1.default.join(__dirname, '.env');
         break;
-    default:
-        dotenvPath = path_1.default.join(__dirname, '.env');
 }
 dotenv.config({ path: dotenvPath });
 const MONGO_DB_HOST = process.env.MONGO_DB_HOST;
