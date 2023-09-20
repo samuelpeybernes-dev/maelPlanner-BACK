@@ -42,7 +42,11 @@ switch (process.env.NODE_ENV) {
         dotenvPath = path_1.default.join(__dirname, '.env');
 }
 dotenv.config({ path: dotenvPath });
-exports.mongoUrl = `mongodb+srv://root:sam30127@sam-dev.a6whj1z.mongodb.net/maelPlanner?authSource=admin&w=1`;
+const MONGO_DB_HOST = process.env.MONGO_DB_HOST;
+const MONGO_DB_USERNAME = process.env.MONGO_DB_USERNAME;
+const MONGO_DB_PASSWORD = process.env.MONGO_DB_PASSWORD;
+const MONGO_DB_NAME = process.env.MONGO_DB_NAME;
+exports.mongoUrl = `mongodb+srv://${MONGO_DB_USERNAME}:${MONGO_DB_PASSWORD}@${MONGO_DB_HOST}/${MONGO_DB_NAME}?authSource=admin&w=1`;
 exports.NODE_ENV = process.env.NODE_ENV;
 exports.BAGDAD_PORT = exports.NODE_ENV === 'development' ? 1632 : 1631;
 // eslint-disable-next-line eqeqeq
