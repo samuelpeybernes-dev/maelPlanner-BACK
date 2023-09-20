@@ -22,24 +22,20 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.JWT_PUB_KEY_PATH = exports.REQUIRE_AUTH = exports.BAGDAD_PORT = exports.NODE_ENV = exports.mongoUrl = void 0;
 const dotenv = __importStar(require("dotenv-safe"));
-const path_1 = __importDefault(require("path"));
 dotenv.config();
 let dotenvPath;
 switch (process.env.NODE_ENV) {
     case 'test':
-        dotenvPath = path_1.default.join(__dirname, '.env');
+        dotenvPath = '.env.example';
         break;
     case 'production':
-        dotenvPath = path_1.default.join(__dirname, '.env');
+        dotenvPath = '.env.example';
         break;
     default:
-        dotenvPath = path_1.default.join(__dirname, '.env');
+        dotenvPath = '.env.example';
 }
 dotenv.config({ path: dotenvPath });
 exports.mongoUrl = `mongodb+srv://root:sam30127@sam-dev.a6whj1z.mongodb.net/maelPlanner?authSource=admin&w=1`;
