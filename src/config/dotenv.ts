@@ -1,8 +1,8 @@
 import * as dotenv from 'dotenv-safe'
 
-
-dotenv.config({example: 'src/.env.example'})
-
+if(process.env.NODE_ENV != 'production') {
+    dotenv.config() 
+} 
 
 const MONGO_DB_HOST: string = process.env.MONGO_DB_HOST!
 const MONGO_DB_USERNAME: string = process.env.MONGO_DB_USERNAME!
