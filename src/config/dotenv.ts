@@ -21,7 +21,6 @@ export const NODE_ENV: string = process.env.NODE_ENV!
 export const BAGDAD_PORT: number = NODE_ENV === 'development' ? 1632 : 1631
 // eslint-disable-next-line eqeqeq
 export const REQUIRE_AUTH: boolean = NODE_ENV === 'production' || process.env.REQUIRE_AUTH! !== 'false'
-export const ENABLE_CACHE: boolean = process.env.ENABLE_CACHE! !== 'false'
 
 
 export const JWT_PUB_KEY_PATH: string = process.env.JWT_PUB_KEY_PATH!
