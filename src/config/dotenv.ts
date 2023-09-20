@@ -11,7 +11,7 @@ switch (process.env.NODE_ENV) {
     dotenvPath = path.join(__dirname, '.env')
     break
   default:
-    dotenvPath = path.join(__dirname, '.env')
+    dotenvPath = path.join(__dirname, '.env') 
 }
 dotenv.config({ path: dotenvPath })
 
