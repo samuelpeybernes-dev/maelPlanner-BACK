@@ -1,16 +1,8 @@
 import * as dotenv from 'dotenv-safe'
-import path from 'path'
+
 
 dotenv.config()
-let dotenvPath
-switch (process.env.NODE_ENV) {
-  case 'development':
-    dotenvPath = path.join(__dirname, '.env')
-    break
-  case 'production':
-    break
-}
-dotenv.config({ path: dotenvPath })
+
 
 const MONGO_DB_HOST: string = process.env.MONGO_DB_HOST!
 const MONGO_DB_USERNAME: string = process.env.MONGO_DB_USERNAME!

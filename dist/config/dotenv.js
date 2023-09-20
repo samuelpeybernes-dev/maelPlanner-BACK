@@ -22,23 +22,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.mongoUrl = void 0;
 const dotenv = __importStar(require("dotenv-safe"));
-const path_1 = __importDefault(require("path"));
 dotenv.config();
-let dotenvPath;
-switch (process.env.NODE_ENV) {
-    case 'development':
-        dotenvPath = path_1.default.join(__dirname, '.env');
-        break;
-    case 'production':
-        break;
-}
-dotenv.config({ path: dotenvPath });
 const MONGO_DB_HOST = process.env.MONGO_DB_HOST;
 const MONGO_DB_USERNAME = process.env.MONGO_DB_USERNAME;
 const MONGO_DB_PASSWORD = process.env.MONGO_DB_PASSWORD;
