@@ -2,10 +2,10 @@
   "name": "bagdad",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon",
-    "start": "ts-node --esm ./src/index.ts",
+    "start": "node -r ts-node/register/transpile-only -r tsconfig-paths/register ./dist/index.js",
     "build": "tsc",
     "test": "jest"
   },
