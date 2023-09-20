@@ -7,15 +7,12 @@
     "dev": "nodemon",
     "start": "node -r ts-node/register/transpile-only -r tsconfig-paths/register ./dist/index.js",
     "build": "rimraf dist && tsc",
-    "copy-env": "cp .env.example dist/.env.example",
     "ts.check": "tsc --project tsconfig.json",
     "add-build": "git add dist",
     "test": "jest"
   },
   "pre-commit": [
     "ts.check",
-    "build",
-    "copy-env",
     "add-build"
   ],
   "author": "",

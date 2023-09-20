@@ -14,9 +14,9 @@ app.use(cors())
 app.use(helmet())
 app.use(express.json())
 
-app.get('/', (req, res) => res.json('Home de Cron ⏲'))
-app.get('/api', (req, res) => res.json({ data: "Bienvenue sur l'api ⏲" }))
-app.get('/api/v1', (req, res) => res.json("Bienvenue sur la v1 de l'api ⏲"))
+app.get('/', (req, res) => res.json('Home de planner 🗓️'))
+app.get('/api', (req, res) => res.json({ data: "Bienvenue sur l'api 🗓️" }))
+app.get('/api/v1', (req, res) => res.json("Bienvenue sur la v1 de l'api 🗓️"))
 
 // app.use('/api/v1/scheduleJob', authMiddleware, scheduleJob)
 app.use('/api/v1/scheduleJob', scheduleJob)

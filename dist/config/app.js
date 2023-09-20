@@ -14,9 +14,9 @@ const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use((0, helmet_1.default)());
 app.use(express_1.default.json());
-app.get('/', (req, res) => res.json('Home de Cron ⏲'));
-app.get('/api', (req, res) => res.json({ data: "Bienvenue sur l'api ⏲" }));
-app.get('/api/v1', (req, res) => res.json("Bienvenue sur la v1 de l'api ⏲"));
+app.get('/', (req, res) => res.json('Home de planner 🗓️'));
+app.get('/api', (req, res) => res.json({ data: "Bienvenue sur l'api 🗓️" }));
+app.get('/api/v1', (req, res) => res.json("Bienvenue sur la v1 de l'api 🗓️"));
 // app.use('/api/v1/scheduleJob', authMiddleware, scheduleJob)
 app.use('/api/v1/scheduleJob', scheduleJob_1.default);
 app.use('/api/v1/scheduleClass', scheduleClass_1.default);
