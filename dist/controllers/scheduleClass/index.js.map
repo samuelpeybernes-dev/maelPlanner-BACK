@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/controllers/scheduleClass/index.js"],"names":[],"mappings":";;;;;;AAAA,gFAAuD;AAGvB,8BAHzB,6BAAmB,CAGyB;AAFnD,kFAAyD;AAEoB,+BAFtE,8BAAoB,CAEsE"}
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../src/controllers/scheduleClass/index.js"],"names":[],"mappings":";;;;;;AAAA,gFAAuD;AAIvB,8BAJzB,6BAAmB,CAIyB;AAHnD,kFAAyD;AAGoB,+BAHtE,8BAAoB,CAGsE;AAFjG,sFAA6D;AAEgE,iCAFtH,gCAAsB,CAEsH"}

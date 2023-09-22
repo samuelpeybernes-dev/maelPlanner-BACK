@@ -8,5 +8,7 @@ router.route('/getSchedule').get(scheduleClass.apiGetScheduleClass)
 
 router.route('/postSchedule').post(validateIncomingData, scheduleClass.apiPostScheduleClass)
 
+router.route('/deleteSchedule').delete(scheduleClass.apiDeleteScheduleClass)
+
 
 export default router

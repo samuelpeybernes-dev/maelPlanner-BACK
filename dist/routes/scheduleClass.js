@@ -32,5 +32,6 @@ const validateIncomingData_js_1 = __importDefault(require("../middlewares/valida
 const router = express_1.default.Router();
 router.route('/getSchedule').get(scheduleClass.apiGetScheduleClass);
 router.route('/postSchedule').post(validateIncomingData_js_1.default, scheduleClass.apiPostScheduleClass);
+router.route('/deleteSchedule').delete(scheduleClass.apiDeleteScheduleClass);
 exports.default = router;
 //# sourceMappingURL=scheduleClass.js.map
