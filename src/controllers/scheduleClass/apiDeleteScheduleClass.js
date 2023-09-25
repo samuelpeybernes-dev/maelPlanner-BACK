@@ -3,7 +3,9 @@ import deleteScheduleClass from '../../dao/mongo/deleteScheduleClass.js'
 
 async function apiDeleteScheduleClass(req, res) {
   try {
-    const scheduleClass = await deleteScheduleClass()
+    const startDate = req.query.start;
+    const endDate = req.query.end;
+    const scheduleClass = await deleteScheduleClass(startDate, endDate)
 
     return res.json({ scheduleClass })
   } catch (error) {

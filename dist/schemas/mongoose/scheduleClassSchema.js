@@ -10,6 +10,7 @@ const scheduleClassSchema = new Schema({
     start: String,
     end: String,
     text: String,
+    html: String,
     subject_id: Schema.Types.ObjectId,
 }, {
     collection: 'scheduleClasse',

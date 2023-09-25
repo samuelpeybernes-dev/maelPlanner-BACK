@@ -12,6 +12,7 @@ const scheduleClassSchema = joi_1.default.object({
         .regex(/^[a-zA-ZÀ-ÿ0-9\s'-.?!]+$/u)
         .min(1)
         .max(50),
+    newHtml: joi_1.default.string(),
     subject_id: joi_1.default.string().required(),
 });
 exports.default = scheduleClassSchema;

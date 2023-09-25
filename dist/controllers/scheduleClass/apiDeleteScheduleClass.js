@@ -7,7 +7,9 @@ const ValidationError_1 = require("../../Errors/ValidationError");
 const deleteScheduleClass_js_1 = __importDefault(require("../../dao/mongo/deleteScheduleClass.js"));
 async function apiDeleteScheduleClass(req, res) {
     try {
-        const scheduleClass = await (0, deleteScheduleClass_js_1.default)();
+        const startDate = req.query.start;
+        const endDate = req.query.end;
+        const scheduleClass = await (0, deleteScheduleClass_js_1.default)(startDate, endDate);
         return res.json({ scheduleClass });
     }
     catch (error) {

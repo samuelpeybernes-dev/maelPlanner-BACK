@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const scheduleJobSchema_js_1 = __importDefault(require("../../schemas/mongoose/scheduleJobSchema.js"));
 async function createUpdateScheduleJob(scheduleJobJoi) {
     try {
-        const { id, newStart, newEnd, newText, newJob, newBackColor, newBorderColor } = scheduleJobJoi;
+        const { id, newStart, newEnd, newText, newHtml, newJob, newBackColor, newBorderColor } = scheduleJobJoi;
         const query = { id: id };
         // Rechercher le document avec le même 'id'
         const existingScheduleJob = await scheduleJobSchema_js_1.default.findOne(query);
@@ -15,6 +15,7 @@ async function createUpdateScheduleJob(scheduleJobJoi) {
             existingScheduleJob.start = newStart;
             existingScheduleJob.end = newEnd;
             existingScheduleJob.text = newText;
+            existingScheduleJob.html = newHtml;
             existingScheduleJob.job = newJob;
             existingScheduleJob.backColor = newBackColor;
             existingScheduleJob.borderColor = newBorderColor;
@@ -30,6 +31,7 @@ async function createUpdateScheduleJob(scheduleJobJoi) {
                 end: newEnd,
                 text: newText,
                 job: newJob,
+                html: newHtml,
                 backColor: newBackColor,
                 borderColor: newBorderColor,
             });

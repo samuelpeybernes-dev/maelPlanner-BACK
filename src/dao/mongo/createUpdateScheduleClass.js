@@ -2,7 +2,7 @@ import scheduleClass from '../../schemas/mongoose/scheduleClassSchema.js'
 import hoursSubject from '../../schemas/mongoose/hoursSubjectSchema.js'
 async function createUpdateScheduleClass(scheduleClassJoi) {
   try {
-    const { id, subject_id, newStart, newEnd, newText } = scheduleClassJoi
+    const { id, subject_id, newStart, newEnd, newText, newHtml } = scheduleClassJoi
  
     const correspondingHoursSubject = await hoursSubject.findById(subject_id);
 
@@ -17,6 +17,7 @@ async function createUpdateScheduleClass(scheduleClassJoi) {
       existingScheduleClass.start = newStart
       existingScheduleClass.end = newEnd
       existingScheduleClass.text = newText
+      existingScheduleClass.html = newHtml
       existingScheduleClass.subject_id = correspondingHoursSubject._id
 
       // Mettre à jour le document dans la base de données
@@ -29,6 +30,7 @@ async function createUpdateScheduleClass(scheduleClassJoi) {
         start: newStart,
         end: newEnd,
         text: newText,
+        html: newHtml,
         subject_id: correspondingHoursSubject._id,
       })
 

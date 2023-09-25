@@ -12,6 +12,7 @@ const scheduleJobSchema = joi_1.default.object({
         .regex(/^[a-zA-ZÀ-ÿ0-9\s'-.?!]+$/u)
         .min(1)
         .max(50),
+    newHtml: joi_1.default.string(),
     newJob: joi_1.default.boolean().required(),
     newBackColor: joi_1.default.string(),
     newBorderColor: joi_1.default.string(),
