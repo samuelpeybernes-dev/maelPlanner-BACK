@@ -1,6 +1,6 @@
 import Joi from 'joi'
 
-const scheduleClassSchema = Joi.object({
+const scheduleClassSchema = Joi.array().items(Joi.object({
   id: Joi.string().required(),
   newStart: Joi.string().required(),
   newEnd: Joi.string().required(),
@@ -10,6 +10,6 @@ const scheduleClassSchema = Joi.object({
     .max(50),
   newHtml: Joi.string(),
   subject_id: Joi.string().required(),
-})
+}));
 
 export default scheduleClassSchema

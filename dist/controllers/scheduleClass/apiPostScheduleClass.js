@@ -8,7 +8,7 @@ async function apiPostScheduleClass(req, res) {
     try {
         const { scheduleClassJoi } = req.body;
         const scheduleClass = await (0, createUpdateScheduleClass_js_1.default)(scheduleClassJoi);
-        return res.status(200).json({ message: 'ok ' + scheduleClass });
+        return res.status(200).json({ message: 'ok ', data: scheduleClass });
     }
     catch (error) {
         console.error(error);

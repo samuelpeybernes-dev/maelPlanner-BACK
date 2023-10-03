@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const joi_1 = __importDefault(require("joi"));
-const scheduleClassSchema = joi_1.default.object({
+const scheduleClassSchema = joi_1.default.array().items(joi_1.default.object({
     id: joi_1.default.string().required(),
     newStart: joi_1.default.string().required(),
     newEnd: joi_1.default.string().required(),
@@ -14,6 +14,6 @@ const scheduleClassSchema = joi_1.default.object({
         .max(50),
     newHtml: joi_1.default.string(),
     subject_id: joi_1.default.string().required(),
-});
+}));
 exports.default = scheduleClassSchema;
 //# sourceMappingURL=scheduleClassSchema.js.map
