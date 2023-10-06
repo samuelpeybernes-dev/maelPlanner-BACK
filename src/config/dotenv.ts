@@ -1,8 +1,7 @@
 import * as dotenv from 'dotenv-safe'
 
-if (process.env.NODE_ENV !== 'production') {
-  dotenv.config()
-}
+dotenv.config()
+
 export const JWT_ACCESS_TOKEN_SECRET: string = process.env.JWT_ACCESS_TOKEN_SECRET!
 export const JWT_REFRESH_TOKEN_SECRET: string = process.env.JWT_REFRESH_TOKEN_SECRET!
 const MONGO_DB_HOST: string = process.env.MONGO_DB_HOST!
