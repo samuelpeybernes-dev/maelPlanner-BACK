@@ -1,0 +1,205 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "back",
+    "dateExported": "2023-10-06T08:50:29.294Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "0c6534c0-6a63-4f62-9630-8eace90cdbd1",
+            "name": "scheduleJob",
+            "containerId": "",
+            "created": "2023-09-26T17:57:18.545Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "587ac24a-0d03-49be-ac0c-de6fe99b7383",
+            "name": "scheduleClass",
+            "containerId": "",
+            "created": "2023-09-26T17:57:18.546Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "95d79d0b-076d-49d1-ad67-651f0ab57704",
+            "name": "hoursSubject",
+            "containerId": "",
+            "created": "2023-09-26T17:57:18.547Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "caf2e41c-2e92-4c4e-8c08-74d62e9a400c",
+            "name": "user",
+            "containerId": "",
+            "created": "2023-10-05T12:47:30.368Z",
+            "sortNum": 40000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "f5bbf5ce-6b22-4917-a06d-81b57345ba90",
+            "colId": "2077afd5-9f0d-40f1-98dd-819c2334cd0a",
+            "containerId": "0c6534c0-6a63-4f62-9630-8eace90cdbd1",
+            "name": "getScheduleJob",
+            "url": "http://localhost:1631/api/v1/scheduleJob/getSchedule",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-09-26T17:57:18.545Z",
+            "modified": "2023-10-05T13:22:54.892Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFlYjgzZDI0YWQyN2IxNTg0MTM0ZTgiLCJpYXQiOjE2OTY1MTIxNDksImV4cCI6MTY5NjUxMzA0OX0.QouT0npw5gIlrMuSNSsE7s-y7cZbbhA3CXt2z36Wb70"
+            },
+            "tests": []
+        },
+        {
+            "_id": "d21e8943-3cc5-4b6e-9f9b-b72ba29fa317",
+            "colId": "2077afd5-9f0d-40f1-98dd-819c2334cd0a",
+            "containerId": "587ac24a-0d03-49be-ac0c-de6fe99b7383",
+            "name": "getScheduleClass",
+            "url": "http://localhost:1631/api/v1/scheduleClass/getSchedule",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-09-26T17:57:18.548Z",
+            "modified": "2023-09-26T17:57:18.548Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "aa411995-7aac-4f94-95fc-67e631344b70",
+            "colId": "2077afd5-9f0d-40f1-98dd-819c2334cd0a",
+            "containerId": "95d79d0b-076d-49d1-ad67-651f0ab57704",
+            "name": "getHoursSubject",
+            "url": "http://localhost:1631/api/v1/hoursSubject/gethoursSubject",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-09-26T17:57:18.551Z",
+            "modified": "2023-09-26T17:57:18.551Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0ade400c-42b8-496b-93e4-fdebefeeac88",
+            "colId": "2077afd5-9f0d-40f1-98dd-819c2334cd0a",
+            "containerId": "0c6534c0-6a63-4f62-9630-8eace90cdbd1",
+            "name": "postScheduleJob",
+            "url": "http://localhost:1631/api/v1/scheduleJob/postSchedule",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-09-26T17:57:18.546Z",
+            "modified": "2023-09-26T17:57:18.546Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"scheduleJobJoi\":\n    {\n    \"id\":\"2\",\n    \"newStart\":\"2023-09-04T06:00:00.000Z\",\n    \"newEnd\":\"2023-09-04T06:00:00.000Z\",\n    \"newText\":\"Décathlon\",\n    \"newHtml\": \"Décathlon<br><span style=\\\"font-weight: normal; font-size: 16px;\\\"> 3h30  5h30</span>\",\n    \"newJob\": true\n    }\n  \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "dd794c5b-bd81-45f9-89d7-686aab6317f5",
+            "colId": "2077afd5-9f0d-40f1-98dd-819c2334cd0a",
+            "containerId": "587ac24a-0d03-49be-ac0c-de6fe99b7383",
+            "name": "postScheduleClass",
+            "url": "http://localhost:1631/api/v1/scheduleClass/postSchedule",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-09-26T17:57:18.549Z",
+            "modified": "2023-10-03T10:15:41.648Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"scheduleClassJoi\": [\n    {\n      \"id\": \"eheh64646725yeye\",\n      \"newStart\": \"2023-09-18T06:00:00.000Z\",\n      \"newEnd\": \"2023-09-18T08:00:00.000Z\",\n      \"newText\": \"Biochimie\",\n      \"newHtml\": \"Biochimie<br><span style=\\\"font-weight: normal; font-size: 16px;\\\"> 3h30  5h30</span>\",\n      \"subject_id\": \"6500a198ae2507564a499ff1\"\n    },\n    {\n      \"id\": \"eheh6fbhejfzj88\",\n      \"newStart\": \"2023-09-18T09:00:00.000Z\",\n      \"newEnd\": \"2023-09-18T10:00:00.000Z\",\n      \"newText\": \"MicroToxicoViro\",\n      \"newHtml\": \"MicroToxicoViro<br><span style=\\\"font-weight: normal; font-size: 16px;\\\"> 3h30  5h30</span>\",\n      \"subject_id\": \"6500a1c2ae2507564a499ff2\"\n    }\n  ]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8f2328f1-0557-474b-9c7e-12f70fee94ac",
+            "colId": "2077afd5-9f0d-40f1-98dd-819c2334cd0a",
+            "containerId": "0c6534c0-6a63-4f62-9630-8eace90cdbd1",
+            "name": "deleteScheduleJob",
+            "url": "http://localhost:1631/api/v1/scheduleJob/deleteSchedule?id=371e0431-10cc-5b98-b1da-795050112d92",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2023-09-26T17:57:18.547Z",
+            "modified": "2023-09-26T17:57:18.547Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "371e0431-10cc-5b98-b1da-795050112d92",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "278bde2c-0ceb-494b-baf9-4d5bc06622c3",
+            "colId": "2077afd5-9f0d-40f1-98dd-819c2334cd0a",
+            "containerId": "587ac24a-0d03-49be-ac0c-de6fe99b7383",
+            "name": "deleteScheduleClass",
+            "url": "http://localhost:1631/api/v1/scheduleClass/deleteSchedule?start=2023-09-18T00:00:00&end=2023-09-19T24:00:00",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2023-09-26T17:57:18.550Z",
+            "modified": "2023-09-26T17:57:18.550Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "start",
+                    "value": "2023-09-18T00:00:00",
+                    "isPath": false
+                },
+                {
+                    "name": "end",
+                    "value": "2023-09-19T24:00:00",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "6f99ab9f-9c17-4765-873d-46f24dcc10ba",
+            "colId": "2077afd5-9f0d-40f1-98dd-819c2334cd0a",
+            "containerId": "caf2e41c-2e92-4c4e-8c08-74d62e9a400c",
+            "name": "login",
+            "url": "http://localhost:1631/api/v1/guest/login",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-10-05T12:47:47.589Z",
+            "modified": "2023-10-05T13:21:29.259Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"bite@gmail.com\",\n  \"password\": \"test\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d9a15aef-1e3b-460a-a346-52bd8dbf041b",
+            "colId": "2077afd5-9f0d-40f1-98dd-819c2334cd0a",
+            "containerId": "caf2e41c-2e92-4c4e-8c08-74d62e9a400c",
+            "name": "register",
+            "url": "http://localhost:1631/api/v1/guest/register",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-10-05T13:18:34.745Z",
+            "modified": "2023-10-05T13:48:05.974Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Samuel\",\n  \"email\": \"eeee@gmail.com\",\n  \"password\": \"test\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
