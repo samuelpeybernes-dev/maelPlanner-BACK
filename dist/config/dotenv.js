@@ -25,7 +25,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.mongoUrl = exports.JWT_REFRESH_TOKEN_SECRET = exports.JWT_ACCESS_TOKEN_SECRET = void 0;
 const dotenv = __importStar(require("dotenv-safe"));
-dotenv.config();
+if (process.env.NODE_ENV != 'production') {
+    dotenv.config();
+}
 exports.JWT_ACCESS_TOKEN_SECRET = process.env.JWT_ACCESS_TOKEN_SECRET;
 exports.JWT_REFRESH_TOKEN_SECRET = process.env.JWT_REFRESH_TOKEN_SECRET;
 const MONGO_DB_HOST = process.env.MONGO_DB_HOST;
