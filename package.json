@@ -14,8 +14,8 @@
   },
   "pre-commit": [
     "ts.check",
-    "build",
     "copy-env",
+    "build",
     "add-build"
   ],
   "author": "",
