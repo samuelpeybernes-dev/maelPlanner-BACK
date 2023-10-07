@@ -20,7 +20,7 @@ const logger = (0, winston_1.createLogger)({
         }
         return `[${timestamp}] ${level}: ${message}`;
     })),
-    transports: [new winston_1.transports.File({ filename: '../logs/error.log', level: 'error' }), new winston_1.transports.Console()],
+    // transports: [new transports.File({ filename: './logs/error.log', level: 'error' }), new transports.Console()],
 });
 exports.default = logger;
 //# sourceMappingURL=logger.js.map
