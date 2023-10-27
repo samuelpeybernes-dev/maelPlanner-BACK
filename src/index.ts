@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 import app from './config/app'
-import {  mongoUrl } from './config/dotenv'
+import { mongoUrl } from './config/dotenv'
 
 async function main() {
   try {
