@@ -15,6 +15,7 @@ async function validateIncomingData(req, res, next) {
     }
 
     const dataName = incomingDataName[0]
+
     //* On se sert du nom de l'objet pour trouver le schema Joi correspondant
     if (!joiSchemas.hasOwnProperty(dataName)) {
       const error = "You're sending the wrong type of data."

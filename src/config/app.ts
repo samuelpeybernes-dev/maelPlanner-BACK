@@ -6,6 +6,7 @@ import scheduleClass from '../routes/scheduleClass'
 import hoursSubject from '../routes/hoursSubject'
 import passport from '../middlewares/PassportJWT'
 import guest from '../routes/guest'
+import user from '../routes/user'
 
 const app = express()
 
@@ -17,10 +18,17 @@ app.get('/', (req, res) => res.json('Home de planner 🗓️'))
 app.get('/api', (req, res) => res.json({ data: "Bienvenue sur l'api 🗓️" }))
 app.get('/api/v1', (req, res) => res.json("Bienvenue sur la v1 de l'api 🗓️"))
 
-app.use('/api/v1/scheduleJob', passport.authenticate('jwt', { session: false }), scheduleJob)
-app.use('/api/v1/scheduleClass', passport.authenticate('jwt', { session: false }), scheduleClass)
-app.use('/api/v1/hoursSubject', passport.authenticate('jwt', { session: false }), hoursSubject)
-
+if (process.env.AUTH === 'false') {
+  app.use('/api/v1/scheduleJob', scheduleJob)
+  app.use('/api/v1/scheduleClass', scheduleClass)
+  app.use('/api/v1/hoursSubject', hoursSubject)
+  app.use('/api/v1/user', user)
+} else {
+  app.use('/api/v1/scheduleJob', passport.authenticate('jwt', { session: false }), scheduleJob)
+  app.use('/api/v1/scheduleClass', passport.authenticate('jwt', { session: false }), scheduleClass)
+  app.use('/api/v1/hoursSubject', passport.authenticate('jwt', { session: false }), hoursSubject)
+  app.use('/api/v1/user', passport.authenticate('jwt', { session: false }), user)
+}
 app.use('/api/v1/guest', guest)
 
 app.use('*', (req, res) =>

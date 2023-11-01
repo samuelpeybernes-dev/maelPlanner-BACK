@@ -25,6 +25,7 @@ async function createUpdateScheduleJob(scheduleJobJoi) {
         }
         else {
             // Le document n'existe pas, vous pouvez en créer un nouveau ici
+            // eslint-disable-next-line new-cap
             const newScheduleJob = new scheduleJobSchema_js_1.default({
                 id: id,
                 start: newStart,
