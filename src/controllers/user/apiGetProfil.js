@@ -1,10 +1,10 @@
 import { ValidationError } from '../../Errors/ValidationError'
-import getUserByEmail from '../../dao/mongo/getUserByEmail.js'
+import getUserByToken from '../../dao/mongo/getUserByToken.js'
 
 async function apiGetProfil(req, res) {
   try {
-    const { email } = req.query
-    const profil = await getUserByEmail(email)
+    const { token } = req.query
+    const profil = await getUserByToken(token)
 
     return res.json({ profil })
   } catch (error) {

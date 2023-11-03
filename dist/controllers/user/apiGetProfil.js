@@ -4,11 +4,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const ValidationError_1 = require("../../Errors/ValidationError");
-const getUserByEmail_js_1 = __importDefault(require("../../dao/mongo/getUserByEmail.js"));
+const getUserByToken_js_1 = __importDefault(require("../../dao/mongo/getUserByToken.js"));
 async function apiGetProfil(req, res) {
     try {
-        const { email } = req.query;
-        const profil = await (0, getUserByEmail_js_1.default)(email);
+        const { token } = req.query;
+        const profil = await (0, getUserByToken_js_1.default)(token);
         return res.json({ profil });
     }
     catch (error) {
