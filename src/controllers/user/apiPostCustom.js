@@ -1,12 +1,12 @@
-import updateUserByToken from '../../dao/mongo/updateUserByToken'
+import updateUserById from '../../dao/mongo/updateUserById'
 
 async function apiPostCustom(req, res) {
   try {
     const { userJoi } = req.body
-    const { token } = req.query
-    const customization = await updateUserByToken(token, userJoi)
+    const { _id } = req.query
+    const customization = await updateUserById(_id, userJoi)
 
-    return res.status(200).json({ message: 'ok ' + customization })
+    return res.status(200).json({ message: 'ok ' + customization.email })
   } catch (error) {
     console.error(error)
     return res.status(500).json({ error: error })

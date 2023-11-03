@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "back",
-    "dateExported": "2023-11-03T18:54:40.735Z",
+    "dateExported": "2023-11-03T23:14:35.875Z",
     "version": "1.1",
     "folders": [
         {
@@ -225,22 +225,22 @@
             "colId": "2af39bcf-7a6e-495e-b71c-f6b8057d5ae7",
             "containerId": "ff5d477c-a73d-4982-91fb-d2bbf1aa512a",
             "name": "updateCustom",
-            "url": "http://localhost:1631/api/v1/user/postCustomization?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTIwOGRlNTY2YTE0N2E4YjBmNDIwOWEiLCJpYXQiOjE2OTkwMzI3ODAsImV4cCI6MTY5OTAzMzY4MH0.JVi_n4t7RDqp3XDcrzEQqufRY0chKprlk-Y0iN-I_70",
+            "url": "http://localhost:1631/api/v1/user/postCustomization?_id=65208de566a147a8b0f4209a",
             "method": "POST",
             "sortNum": 60000,
             "created": "2023-10-27T21:20:21.328Z",
-            "modified": "2023-11-03T17:43:48.738Z",
+            "modified": "2023-11-03T23:04:56.036Z",
             "headers": [],
             "params": [
                 {
-                    "name": "token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTIwOGRlNTY2YTE0N2E4YjBmNDIwOWEiLCJpYXQiOjE2OTkwMzI3ODAsImV4cCI6MTY5OTAzMzY4MH0.JVi_n4t7RDqp3XDcrzEQqufRY0chKprlk-Y0iN-I_70",
+                    "name": "_id",
+                    "value": "65208de566a147a8b0f4209a",
                     "isPath": false
                 }
             ],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"userJoi\": {\n    \"maxEventHoursPerDay\": 15,\n    \"lunchBreakStartHour\": 11,\n    \"lunchBreakEndHour\": 13,\n    \"startHour\": 9\n  }\n}",
+                "raw": "{\n  \"userJoi\": {\n    \"maxEventHoursPerDay\": 19,\n    \"lunchBreakStartHour\": 11,\n    \"lunchBreakEndHour\": 13,\n    \"startHour\": 9\n  }\n}",
                 "form": []
             },
             "auth": {
@@ -254,16 +254,16 @@
             "colId": "2af39bcf-7a6e-495e-b71c-f6b8057d5ae7",
             "containerId": "ff5d477c-a73d-4982-91fb-d2bbf1aa512a",
             "name": "getProfil",
-            "url": "http://localhost:1631/api/v1/user/getCustomization?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTIwOGRlNTY2YTE0N2E4YjBmNDIwOWEiLCJpYXQiOjE2OTkwMzY5ODksImV4cCI6MTY5OTAzNzg4OX0.xX5K2FFJWPA3QEwR1DwxDc0nWssYEwJJtPkjp4iuRjU",
+            "url": "http://localhost:1631/api/v1/user/getCustomization?_id=65208de566a147a8b0f4209a",
             "method": "GET",
             "sortNum": 70000,
             "created": "2023-10-27T22:28:49.470Z",
-            "modified": "2023-11-03T18:47:03.885Z",
+            "modified": "2023-11-03T23:02:09.698Z",
             "headers": [],
             "params": [
                 {
-                    "name": "token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTIwOGRlNTY2YTE0N2E4YjBmNDIwOWEiLCJpYXQiOjE2OTkwMzY5ODksImV4cCI6MTY5OTAzNzg4OX0.xX5K2FFJWPA3QEwR1DwxDc0nWssYEwJJtPkjp4iuRjU",
+                    "name": "_id",
+                    "value": "65208de566a147a8b0f4209a",
                     "isPath": false
                 }
             ],

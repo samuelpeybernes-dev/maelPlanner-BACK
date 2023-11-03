@@ -10,7 +10,7 @@ const hoursSubjectSchema = new Schema({
     text: String,
     weekHours: Number,
     backColor: String,
-    borderColor: String
+    borderColor: String,
 }, {
     collection: 'hoursSubject',
     versionKey: false,

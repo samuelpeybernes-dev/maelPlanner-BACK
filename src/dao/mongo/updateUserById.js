@@ -1,8 +1,8 @@
 import userSchema from '../../schemas/mongoose/userSchema.js'
 
-async function updateUserByToken(token, customizationJoi) {
+async function updateUserById(_id, customizationJoi) {
   try {
-    const filter = { token: token }
+    const filter = { _id }
     const result = await userSchema.findOneAndUpdate(filter, customizationJoi, {
       new: true,
     })
@@ -12,4 +12,4 @@ async function updateUserByToken(token, customizationJoi) {
     console.error(error)
   }
 }
-export default updateUserByToken
+export default updateUserById

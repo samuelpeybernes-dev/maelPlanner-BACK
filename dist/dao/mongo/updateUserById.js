@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const userSchema_js_1 = __importDefault(require("../../schemas/mongoose/userSchema.js"));
-async function updateUserByToken(token, customizationJoi) {
+async function updateUserById(_id, customizationJoi) {
     try {
-        const filter = { token: token };
+        const filter = { _id };
         const result = await userSchema_js_1.default.findOneAndUpdate(filter, customizationJoi, {
             new: true,
         });
@@ -16,5 +16,5 @@ async function updateUserByToken(token, customizationJoi) {
         console.error(error);
     }
 }
-exports.default = updateUserByToken;
-//# sourceMappingURL=updateUserByToken.js.map
+exports.default = updateUserById;
+//# sourceMappingURL=updateUserById.js.map

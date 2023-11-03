@@ -7,7 +7,7 @@ const hoursSubjectSchema = new Schema(
     text: String,
     weekHours: Number,
     backColor: String,
-    borderColor: String
+    borderColor: String,
   },
   {
     collection: 'hoursSubject',
@@ -17,6 +17,5 @@ const hoursSubjectSchema = new Schema(
 )
 
 const hoursSubject = mongoose.model('hoursSubject', hoursSubjectSchema)
-
 
 export default hoursSubject
