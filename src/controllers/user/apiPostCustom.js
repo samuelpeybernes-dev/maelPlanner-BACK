@@ -6,7 +6,7 @@ async function apiPostCustom(req, res) {
     const { token } = req.query
     const customization = await updateUserByToken(token, userJoi)
 
-    return res.status(200).json({ message: 'ok ' + customization.email })
+    return res.status(200).json({ message: 'ok ' + customization })
   } catch (error) {
     console.error(error)
     return res.status(500).json({ error: error })

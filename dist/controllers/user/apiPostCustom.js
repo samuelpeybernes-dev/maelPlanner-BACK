@@ -9,7 +9,7 @@ async function apiPostCustom(req, res) {
         const { userJoi } = req.body;
         const { token } = req.query;
         const customization = await (0, updateUserByToken_1.default)(token, userJoi);
-        return res.status(200).json({ message: 'ok ' + customization.email });
+        return res.status(200).json({ message: 'ok ' + customization });
     }
     catch (error) {
         console.error(error);
