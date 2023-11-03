@@ -6,7 +6,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const logger_1 = __importDefault(require("../../utils/logger"));
 const userSchema_js_1 = __importDefault(require("../../schemas/mongoose/userSchema.js"));
 async function getUserByEmail(email) {
-    const user = await userSchema_js_1.default.findOne({ email });
+    const user = await userSchema_js_1.default.findOne({ email }, {
+        _id: 0,
+        password: 0,
+    });
     logger_1.default.debug(user);
     return user;
 }
