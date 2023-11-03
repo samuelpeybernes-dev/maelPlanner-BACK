@@ -7,6 +7,7 @@ const getUserPassword_1 = __importDefault(require("../../dao/mongo/getUserPasswo
 const bcrypt_1 = __importDefault(require("bcrypt"));
 const logger_1 = __importDefault(require("../../utils/logger"));
 const generateToken_1 = __importDefault(require("../../utils/generateToken"));
+const updateUserByEmail_1 = __importDefault(require("../../dao/mongo/updateUserByEmail"));
 async function apiPostLogin(req, res) {
     try {
         const email = req.body.email;
@@ -19,6 +20,10 @@ async function apiPostLogin(req, res) {
         }
         if (bcrypt_1.default.compareSync(password, resp.password)) {
             const { accessToken, refreshToken } = await (0, generateToken_1.default)(resp._id, resp.email);
+            const userJoi = {
+                token: accessToken,
+            };
+            await (0, updateUserByEmail_1.default)(email, userJoi);
             return res.status(200).json({ accessToken, refreshToken });
         }
         else {

@@ -2,6 +2,7 @@ import getUserPassword from '../../dao/mongo/getUserPassword'
 import bcrypt from 'bcrypt'
 import logger from '../../utils/logger'
 import generateToken from '../../utils/generateToken'
+import updateUserByEmail from '../../dao/mongo/updateUserByEmail'
 
 async function apiPostLogin(req, res) {
   try {
@@ -15,6 +16,10 @@ async function apiPostLogin(req, res) {
     }
     if (bcrypt.compareSync(password, resp.password)) {
       const { accessToken, refreshToken } = await generateToken(resp._id, resp.email)
+      const userJoi = {
+        token: accessToken,
+      }
+      await updateUserByEmail(email, userJoi)
       return res.status(200).json({ accessToken, refreshToken })
     } else {
       return res.status(401).json({ message: 'Login failed' })

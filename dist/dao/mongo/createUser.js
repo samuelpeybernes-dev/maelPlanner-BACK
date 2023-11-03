@@ -7,6 +7,7 @@ const userSchema_js_1 = __importDefault(require("../../schemas/mongoose/userSche
 const bcrypt_1 = __importDefault(require("bcrypt"));
 async function createUser(name, email, password) {
     try {
+        // eslint-disable-next-line new-cap
         const newUser = new userSchema_js_1.default({
             name: name,
             email: email,
