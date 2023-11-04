@@ -7,7 +7,8 @@ const ValidationError_1 = require("../../Errors/ValidationError");
 const getScheduleClass_js_1 = __importDefault(require("../../dao/mongo/getScheduleClass.js"));
 async function apiGetScheduleClass(req, res) {
     try {
-        const scheduleClass = await (0, getScheduleClass_js_1.default)();
+        const { _id } = req.query;
+        const scheduleClass = await (0, getScheduleClass_js_1.default)(_id);
         return res.json({ scheduleClass });
     }
     catch (error) {

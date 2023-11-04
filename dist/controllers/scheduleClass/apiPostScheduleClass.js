@@ -7,7 +7,10 @@ const createUpdateScheduleClass_js_1 = __importDefault(require("../../dao/mongo/
 async function apiPostScheduleClass(req, res) {
     try {
         const { scheduleClassJoi } = req.body;
-        const scheduleClass = await (0, createUpdateScheduleClass_js_1.default)(scheduleClassJoi);
+        const { _id } = req.query;
+        const scheduleClass = await (0, createUpdateScheduleClass_js_1.default)(_id, scheduleClassJoi);
+        if (scheduleClass instanceof Error)
+            return res.status(500).json({ error: scheduleClass.message });
         return res.status(200).json({ message: 'ok ', data: scheduleClass });
     }
     catch (error) {

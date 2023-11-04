@@ -5,8 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const scheduleClassSchema_js_1 = __importDefault(require("../../schemas/mongoose/scheduleClassSchema.js"));
 const hoursSubjectSchema_js_1 = __importDefault(require("../../schemas/mongoose/hoursSubjectSchema.js"));
-async function createUpdateScheduleClasses(scheduleClassJoi) {
+const userSchema_js_1 = __importDefault(require("../../schemas/mongoose/userSchema.js"));
+async function createUpdateScheduleClasses(user_id, scheduleClassJoi) {
     try {
+        const correspondingUser = await userSchema_js_1.default.findById(user_id);
+        if (!correspondingUser || undefined) {
+            throw new Error('User not found for id:' + user_id);
+        }
         for (const scheduleItem of scheduleClassJoi) {
             const { id, subject_id, newStart, newEnd, newText, newHtml } = scheduleItem;
             const correspondingHoursSubject = await hoursSubjectSchema_js_1.default.findById(subject_id);
@@ -22,6 +27,7 @@ async function createUpdateScheduleClasses(scheduleClassJoi) {
                 existingScheduleClass.text = newText;
                 existingScheduleClass.html = newHtml;
                 existingScheduleClass.subject_id = correspondingHoursSubject._id;
+                existingScheduleClass.user_id = correspondingUser._id;
                 // Mettre à jour le document dans la base de données
                 await existingScheduleClass.save();
                 console.log('Schedule class updated for id:', id);
@@ -35,6 +41,7 @@ async function createUpdateScheduleClasses(scheduleClassJoi) {
                     text: newText,
                     html: newHtml,
                     subject_id: correspondingHoursSubject._id,
+                    user_id: correspondingUser._id,
                 });
                 // Enregistrer le nouveau document dans la base de données
                 await newScheduleClass.save();
@@ -44,7 +51,7 @@ async function createUpdateScheduleClasses(scheduleClassJoi) {
         return scheduleClassJoi;
     }
     catch (error) {
-        console.error(error);
+        return error;
     }
 }
 exports.default = createUpdateScheduleClasses;

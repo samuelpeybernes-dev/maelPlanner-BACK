@@ -1,8 +1,14 @@
 import scheduleClass from '../../schemas/mongoose/scheduleClassSchema.js'
 import hoursSubject from '../../schemas/mongoose/hoursSubjectSchema.js'
+import user from '../../schemas/mongoose/userSchema.js'
 
-async function createUpdateScheduleClasses(scheduleClassJoi) {
+async function createUpdateScheduleClasses(user_id, scheduleClassJoi) {
   try {
+    const correspondingUser = await user.findById(user_id)
+    if (!correspondingUser || undefined) {
+      throw new Error('User not found for id:' + user_id)
+    }
+
     for (const scheduleItem of scheduleClassJoi) {
       const { id, subject_id, newStart, newEnd, newText, newHtml } = scheduleItem
 
@@ -22,6 +28,7 @@ async function createUpdateScheduleClasses(scheduleClassJoi) {
         existingScheduleClass.text = newText
         existingScheduleClass.html = newHtml
         existingScheduleClass.subject_id = correspondingHoursSubject._id
+        existingScheduleClass.user_id = correspondingUser._id
 
         // Mettre à jour le document dans la base de données
         await existingScheduleClass.save()
@@ -35,6 +42,7 @@ async function createUpdateScheduleClasses(scheduleClassJoi) {
           text: newText,
           html: newHtml,
           subject_id: correspondingHoursSubject._id,
+          user_id: correspondingUser._id,
         })
 
         // Enregistrer le nouveau document dans la base de données
@@ -44,7 +52,7 @@ async function createUpdateScheduleClasses(scheduleClassJoi) {
     }
     return scheduleClassJoi
   } catch (error) {
-    console.error(error)
+    return error
   }
 }
 

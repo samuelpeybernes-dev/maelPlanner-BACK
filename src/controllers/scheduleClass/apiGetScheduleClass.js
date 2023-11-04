@@ -3,8 +3,8 @@ import getScheduleClass from '../../dao/mongo/getScheduleClass.js'
 
 async function apiGetScheduleClass(req, res) {
   try {
-    const scheduleClass = await getScheduleClass()
-   
+    const { _id } = req.query
+    const scheduleClass = await getScheduleClass(_id)
 
     return res.json({ scheduleClass })
   } catch (error) {

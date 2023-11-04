@@ -4,8 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const scheduleClassSchema_js_1 = __importDefault(require("../../schemas/mongoose/scheduleClassSchema.js"));
-async function deleteScheduleClass(startDate, endDate) {
+async function deleteScheduleClass(user_id, startDate, endDate) {
     const deletedSchedule = await scheduleClassSchema_js_1.default.deleteMany({
+        user_id: user_id,
         start: {
             $gte: startDate,
         },

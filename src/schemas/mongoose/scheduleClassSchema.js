@@ -3,12 +3,13 @@ const { Schema } = mongoose
 
 const scheduleClassSchema = new Schema(
   {
-    id: String, 
-    start: String, 
-    end: String, 
-    text: String, 
+    id: String,
+    start: String,
+    end: String,
+    text: String,
     html: String,
     subject_id: Schema.Types.ObjectId,
+    user_id: Schema.Types.ObjectId,
   },
   {
     collection: 'scheduleClasse',
@@ -18,6 +19,5 @@ const scheduleClassSchema = new Schema(
 )
 
 const scheduleClass = mongoose.model('scheduleClasse', scheduleClassSchema)
-
 
 export default scheduleClass
