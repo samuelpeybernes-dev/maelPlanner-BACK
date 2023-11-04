@@ -13,7 +13,8 @@ const scheduleJobSchema = new Schema({
     html: String,
     job: Boolean,
     backColor: String,
-    borderColor: String
+    borderColor: String,
+    user_id: Schema.Types.ObjectId,
 }, {
     collection: 'scheduleJob',
     versionKey: false,

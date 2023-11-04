@@ -3,8 +3,8 @@ import getScheduleJob from '../../dao/mongo/getScheduleJob.js'
 
 async function apiGetScheduleJob(req, res) {
   try {
-    const scheduleJob = await getScheduleJob()
-   
+    const { _id } = req.query
+    const scheduleJob = await getScheduleJob(_id)
 
     return res.json({ scheduleJob })
   } catch (error) {

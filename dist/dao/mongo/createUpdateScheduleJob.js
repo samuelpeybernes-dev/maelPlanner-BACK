@@ -4,12 +4,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const scheduleJobSchema_js_1 = __importDefault(require("../../schemas/mongoose/scheduleJobSchema.js"));
-async function createUpdateScheduleJob(scheduleJobJoi) {
+const userSchema_js_1 = __importDefault(require("../../schemas/mongoose/userSchema.js"));
+async function createUpdateScheduleJob(user_id, scheduleJobJoi) {
     try {
         const { id, newStart, newEnd, newText, newHtml, newJob, newBackColor, newBorderColor } = scheduleJobJoi;
         const query = { id: id };
+        const correspondingUser = await userSchema_js_1.default.findById(user_id);
         // Rechercher le document avec le même 'id'
         const existingScheduleJob = await scheduleJobSchema_js_1.default.findOne(query);
+        if (!correspondingUser) {
+            console.error('User not found for id:', user_id);
+        }
         if (existingScheduleJob) {
             // Le document existe, vous pouvez mettre à jour ses propriétés ici
             existingScheduleJob.start = newStart;
@@ -19,6 +24,7 @@ async function createUpdateScheduleJob(scheduleJobJoi) {
             existingScheduleJob.job = newJob;
             existingScheduleJob.backColor = newBackColor;
             existingScheduleJob.borderColor = newBorderColor;
+            existingScheduleJob.user_id = correspondingUser._id;
             // Mettre à jour le document dans la base de données
             await existingScheduleJob.save();
             return 'schedule job updated';
@@ -35,6 +41,7 @@ async function createUpdateScheduleJob(scheduleJobJoi) {
                 html: newHtml,
                 backColor: newBackColor,
                 borderColor: newBorderColor,
+                user_id: correspondingUser._id,
             });
             // Enregistrer le nouveau document dans la base de données
             await newScheduleJob.save();

@@ -3,14 +3,15 @@ const { Schema } = mongoose
 
 const scheduleJobSchema = new Schema(
   {
-    id: String, 
-    start: String, 
-    end: String, 
+    id: String,
+    start: String,
+    end: String,
     text: String,
-    html: String, 
+    html: String,
     job: Boolean,
-    backColor: String, 
-    borderColor: String 
+    backColor: String,
+    borderColor: String,
+    user_id: Schema.Types.ObjectId,
   },
   {
     collection: 'scheduleJob',

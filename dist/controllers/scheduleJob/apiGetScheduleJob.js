@@ -7,7 +7,8 @@ const ValidationError_1 = require("../../Errors/ValidationError");
 const getScheduleJob_js_1 = __importDefault(require("../../dao/mongo/getScheduleJob.js"));
 async function apiGetScheduleJob(req, res) {
     try {
-        const scheduleJob = await (0, getScheduleJob_js_1.default)();
+        const { _id } = req.query;
+        const scheduleJob = await (0, getScheduleJob_js_1.default)(_id);
         return res.json({ scheduleJob });
     }
     catch (error) {

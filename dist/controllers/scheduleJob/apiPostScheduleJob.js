@@ -7,7 +7,8 @@ const createUpdateScheduleJob_1 = __importDefault(require("../../dao/mongo/creat
 async function apiPostScheduleJob(req, res) {
     try {
         const { scheduleJobJoi } = req.body;
-        const scheduleJob = await (0, createUpdateScheduleJob_1.default)(scheduleJobJoi);
+        const { _id } = req.query;
+        const scheduleJob = await (0, createUpdateScheduleJob_1.default)(_id, scheduleJobJoi);
         return res.status(200).json({ message: 'ok ' + scheduleJob });
     }
     catch (error) {
