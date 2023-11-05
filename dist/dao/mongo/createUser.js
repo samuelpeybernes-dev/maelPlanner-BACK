@@ -5,10 +5,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const userSchema_js_1 = __importDefault(require("../../schemas/mongoose/userSchema.js"));
 const bcrypt_1 = __importDefault(require("bcrypt"));
-async function createUser(name, email, password) {
+async function createUser(firstName, name, email, password) {
     try {
         // eslint-disable-next-line new-cap
         const newUser = new userSchema_js_1.default({
+            firstName: firstName,
             name: name,
             email: email,
             password: bcrypt_1.default.hashSync(password, 10),

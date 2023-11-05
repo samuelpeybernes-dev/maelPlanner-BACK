@@ -3,6 +3,7 @@ const { Schema } = mongoose
 
 const userSchema = new Schema(
   {
+    firstName: String,
     name: String,
     email: String,
     password: String,
