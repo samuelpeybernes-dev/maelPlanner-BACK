@@ -7,7 +7,8 @@ const ValidationError_1 = require("../../Errors/ValidationError");
 const getHoursSubject_js_1 = __importDefault(require("../../dao/mongo/getHoursSubject.js"));
 async function apiGetHoursSubject(req, res) {
     try {
-        const hoursSubject = await (0, getHoursSubject_js_1.default)();
+        const { _id } = req.query;
+        const hoursSubject = await (0, getHoursSubject_js_1.default)(_id);
         return res.json({ hoursSubject });
     }
     catch (error) {

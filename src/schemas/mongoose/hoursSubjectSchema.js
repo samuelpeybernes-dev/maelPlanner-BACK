@@ -8,6 +8,7 @@ const hoursSubjectSchema = new Schema(
     weekHours: Number,
     backColor: String,
     borderColor: String,
+    user_id: Schema.Types.ObjectId,
   },
   {
     collection: 'hoursSubject',

@@ -3,8 +3,8 @@ import getHoursSubject from '../../dao/mongo/getHoursSubject.js'
 
 async function apiGetHoursSubject(req, res) {
   try {
-    const hoursSubject = await getHoursSubject()
-   
+    const { _id } = req.query
+    const hoursSubject = await getHoursSubject(_id)
 
     return res.json({ hoursSubject })
   } catch (error) {

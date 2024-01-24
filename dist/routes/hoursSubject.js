@@ -28,7 +28,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const hoursSubject = __importStar(require("../controllers/hoursSubject"));
+const validateIncomingData_js_1 = __importDefault(require("../middlewares/validateIncomingData.js"));
 const router = express_1.default.Router();
 router.route('/gethoursSubject').get(hoursSubject.apiGetHoursSubject);
+router.route('/postHoursSubject').post(validateIncomingData_js_1.default, hoursSubject.apiPostHoursSubject);
 exports.default = router;
 //# sourceMappingURL=hoursSubject.js.map

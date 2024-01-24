@@ -6,4 +6,6 @@ const router = express.Router()
 
 router.route('/gethoursSubject').get(hoursSubject.apiGetHoursSubject)
 
+router.route('/postHoursSubject').post(validateIncomingData, hoursSubject.apiPostHoursSubject)
+
 export default router
