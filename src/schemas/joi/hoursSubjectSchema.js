@@ -2,7 +2,7 @@ import Joi from 'joi'
 
 const hoursSubjectSchema = Joi.array().items(
   Joi.object({
-    id: Joi.string().required(),
+    id: Joi.string(),
     newText: Joi.string()
       .regex(/^[a-zA-ZÀ-ÿ0-9\s'-.?!]+$/u)
       .min(1)

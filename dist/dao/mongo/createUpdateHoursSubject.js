@@ -30,7 +30,6 @@ async function createUpdateHoursSubject(user_id, hoursSubjectJoi) {
             else {
                 // Le document n'existe pas, vous pouvez en créer un nouveau ici
                 const newHoursSubject = new hoursSubjectSchema_js_1.default({
-                    _id: mongoose_1.default.Types.ObjectId(id),
                     text: newText,
                     backColor: newBackColor,
                     borderColor: newBorderColor,

@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const { Schema } = mongoose_1.default;
 const hoursSubjectSchema = new Schema({
-    _id: Schema.Types.ObjectId,
     text: String,
     weekHours: Number,
     backColor: String,
