@@ -32,5 +32,6 @@ const validateIncomingData_js_1 = __importDefault(require("../middlewares/valida
 const router = express_1.default.Router();
 router.route('/gethoursSubject').get(hoursSubject.apiGetHoursSubject);
 router.route('/postHoursSubject').post(validateIncomingData_js_1.default, hoursSubject.apiPostHoursSubject);
+router.route('/deleteHoursSubject').delete(hoursSubject.apiDeleteHoursSubject);
 exports.default = router;
 //# sourceMappingURL=hoursSubject.js.map

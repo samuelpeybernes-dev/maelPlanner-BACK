@@ -1,95 +1,152 @@
 {
     "client": "Thunder Client",
     "collectionName": "back",
-    "dateExported": "2023-11-03T23:14:35.875Z",
+    "dateExported": "2024-01-25T11:19:41.924Z",
     "version": "1.1",
     "folders": [
         {
-            "_id": "1dde1bf9-d19f-4176-9735-c5017f0353d2",
+            "_id": "0c6534c0-6a63-4f62-9630-8eace90cdbd1",
             "name": "scheduleJob",
             "containerId": "",
-            "created": "2023-10-06T08:52:44.794Z",
+            "created": "2023-09-26T17:57:18.545Z",
             "sortNum": 10000
         },
         {
-            "_id": "51125328-1fac-4e2c-8c50-c8a98edbb065",
+            "_id": "587ac24a-0d03-49be-ac0c-de6fe99b7383",
             "name": "scheduleClass",
             "containerId": "",
-            "created": "2023-10-06T08:52:44.795Z",
+            "created": "2023-09-26T17:57:18.546Z",
             "sortNum": 20000
         },
         {
-            "_id": "5cb6af5e-9f34-46d9-85ed-e551de46b03b",
+            "_id": "95d79d0b-076d-49d1-ad67-651f0ab57704",
             "name": "hoursSubject",
             "containerId": "",
-            "created": "2023-10-06T08:52:44.796Z",
+            "created": "2023-09-26T17:57:18.547Z",
             "sortNum": 30000
         },
         {
-            "_id": "ff5d477c-a73d-4982-91fb-d2bbf1aa512a",
+            "_id": "caf2e41c-2e92-4c4e-8c08-74d62e9a400c",
             "name": "user",
             "containerId": "",
-            "created": "2023-10-06T08:52:44.797Z",
+            "created": "2023-10-05T12:47:30.368Z",
             "sortNum": 40000
         }
     ],
     "requests": [
         {
-            "_id": "41b59f9c-a7c8-4f21-a794-ec2ac4e09c84",
-            "colId": "2af39bcf-7a6e-495e-b71c-f6b8057d5ae7",
-            "containerId": "1dde1bf9-d19f-4176-9735-c5017f0353d2",
-            "name": "getScheduleJob",
-            "url": "http://localhost:1631/api/v1/scheduleJob/getSchedule",
-            "method": "GET",
-            "sortNum": 10000,
-            "created": "2023-10-06T08:52:44.794Z",
-            "modified": "2023-10-27T20:29:04.499Z",
+            "_id": "5c083d8b-eca7-4694-9c17-f7dcd2d78e37",
+            "colId": "2077afd5-9f0d-40f1-98dd-819c2334cd0a",
+            "containerId": "95d79d0b-076d-49d1-ad67-651f0ab57704",
+            "name": "postHoursSubject",
+            "url": "http://localhost:1631/api/v1/hoursSubject/postHoursSubject?_id=65208de566a147a8b0f4209a",
+            "method": "POST",
+            "sortNum": 5000,
+            "created": "2024-01-24T10:08:56.685Z",
+            "modified": "2024-01-25T10:52:17.663Z",
             "headers": [],
-            "params": [],
-            "auth": {
-                "type": "bearer",
-                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTIwOGRlNTY2YTE0N2E4YjBmNDIwOWEiLCJpYXQiOjE2OTg0Mzg1MzQsImV4cCI6MTY5ODQzOTQzNH0.HkceTTIcAZ5PCr8LduAoVNKFokK_fPmXcjPxgkRT9bc"
+            "params": [
+                {
+                    "name": "_id",
+                    "value": "65208de566a147a8b0f4209a",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"hoursSubjectJoi\": [\n    {\n      \"id\": \"65b23d1e2f451454b80c9028\",\n      \"newText\": \"test1\",\n      \"newWeekHours\": 8,\n      \"newBorderColor\": \"test\",\n      \"newBackColor\": \"test\"\n    },\n    {\n      \"newText\": \"test2\",\n      \"newWeekHours\": 15,\n      \"newBorderColor\": \"test2\",\n      \"newBackColor\": \"test2\"\n    }\n  ]\n}",
+                "form": []
             },
             "tests": []
         },
         {
-            "_id": "bf79af1f-34d4-4e87-922e-b3f7a26fdef4",
-            "colId": "2af39bcf-7a6e-495e-b71c-f6b8057d5ae7",
-            "containerId": "51125328-1fac-4e2c-8c50-c8a98edbb065",
+            "_id": "58804f4f-92bc-4e52-a95d-c32877c0301a",
+            "colId": "2077afd5-9f0d-40f1-98dd-819c2334cd0a",
+            "containerId": "95d79d0b-076d-49d1-ad67-651f0ab57704",
+            "name": "deleteHoursSubject",
+            "url": "http://localhost:1631/api/v1/hoursSubject/deleteHoursSubject?id=65b241661edc98a32fc7c278",
+            "method": "DELETE",
+            "sortNum": 7500,
+            "created": "2024-01-25T11:08:10.244Z",
+            "modified": "2024-01-25T11:19:03.215Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "65b241661edc98a32fc7c278",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "f5bbf5ce-6b22-4917-a06d-81b57345ba90",
+            "colId": "2077afd5-9f0d-40f1-98dd-819c2334cd0a",
+            "containerId": "0c6534c0-6a63-4f62-9630-8eace90cdbd1",
+            "name": "getScheduleJob",
+            "url": "http://localhost:1631/api/v1/scheduleJob/getSchedule",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-09-26T17:57:18.545Z",
+            "modified": "2023-10-05T13:22:54.892Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFlYjgzZDI0YWQyN2IxNTg0MTM0ZTgiLCJpYXQiOjE2OTY1MTIxNDksImV4cCI6MTY5NjUxMzA0OX0.QouT0npw5gIlrMuSNSsE7s-y7cZbbhA3CXt2z36Wb70"
+            },
+            "tests": []
+        },
+        {
+            "_id": "d21e8943-3cc5-4b6e-9f9b-b72ba29fa317",
+            "colId": "2077afd5-9f0d-40f1-98dd-819c2334cd0a",
+            "containerId": "587ac24a-0d03-49be-ac0c-de6fe99b7383",
             "name": "getScheduleClass",
-            "url": "http://localhost:1631/api/v1/scheduleClass/getSchedule",
+            "url": "http://localhost:1631/api/v1/scheduleClass/getSchedule?_id=6547ca93365cbbbd53b8dc6c",
             "method": "GET",
             "sortNum": 10000,
-            "created": "2023-10-06T08:52:44.798Z",
-            "modified": "2023-10-06T08:52:44.798Z",
+            "created": "2023-09-26T17:57:18.548Z",
+            "modified": "2024-01-24T11:36:45.363Z",
             "headers": [],
-            "params": [],
+            "params": [
+                {
+                    "name": "_id",
+                    "value": "6547ca93365cbbbd53b8dc6c",
+                    "isPath": false
+                }
+            ],
             "tests": []
         },
         {
-            "_id": "efc7be0a-bcf8-4a11-be08-373b2b710e37",
-            "colId": "2af39bcf-7a6e-495e-b71c-f6b8057d5ae7",
-            "containerId": "5cb6af5e-9f34-46d9-85ed-e551de46b03b",
+            "_id": "aa411995-7aac-4f94-95fc-67e631344b70",
+            "colId": "2077afd5-9f0d-40f1-98dd-819c2334cd0a",
+            "containerId": "95d79d0b-076d-49d1-ad67-651f0ab57704",
             "name": "getHoursSubject",
-            "url": "http://localhost:1631/api/v1/hoursSubject/gethoursSubject",
+            "url": "http://localhost:1631/api/v1/hoursSubject/gethoursSubject?_id=65208de566a147a8b0f4209a",
             "method": "GET",
             "sortNum": 10000,
-            "created": "2023-10-06T08:52:44.801Z",
-            "modified": "2023-10-06T08:52:44.801Z",
+            "created": "2023-09-26T17:57:18.551Z",
+            "modified": "2024-01-24T09:20:16.535Z",
             "headers": [],
-            "params": [],
+            "params": [
+                {
+                    "name": "_id",
+                    "value": "65208de566a147a8b0f4209a",
+                    "isPath": false
+                }
+            ],
             "tests": []
         },
         {
-            "_id": "9f4901b5-9c33-409d-8351-68e683b3a3e5",
-            "colId": "2af39bcf-7a6e-495e-b71c-f6b8057d5ae7",
-            "containerId": "1dde1bf9-d19f-4176-9735-c5017f0353d2",
+            "_id": "0ade400c-42b8-496b-93e4-fdebefeeac88",
+            "colId": "2077afd5-9f0d-40f1-98dd-819c2334cd0a",
+            "containerId": "0c6534c0-6a63-4f62-9630-8eace90cdbd1",
             "name": "postScheduleJob",
             "url": "http://localhost:1631/api/v1/scheduleJob/postSchedule",
             "method": "POST",
             "sortNum": 20000,
-            "created": "2023-10-06T08:52:44.796Z",
-            "modified": "2023-10-06T08:52:44.796Z",
+            "created": "2023-09-26T17:57:18.546Z",
+            "modified": "2023-09-26T17:57:18.546Z",
             "headers": [],
             "params": [],
             "body": {
@@ -100,15 +157,15 @@
             "tests": []
         },
         {
-            "_id": "4d3a789b-7bc3-4d23-b02f-9e1d3a723ea2",
-            "colId": "2af39bcf-7a6e-495e-b71c-f6b8057d5ae7",
-            "containerId": "51125328-1fac-4e2c-8c50-c8a98edbb065",
+            "_id": "dd794c5b-bd81-45f9-89d7-686aab6317f5",
+            "colId": "2077afd5-9f0d-40f1-98dd-819c2334cd0a",
+            "containerId": "587ac24a-0d03-49be-ac0c-de6fe99b7383",
             "name": "postScheduleClass",
             "url": "http://localhost:1631/api/v1/scheduleClass/postSchedule",
             "method": "POST",
             "sortNum": 20000,
-            "created": "2023-10-06T08:52:44.799Z",
-            "modified": "2023-10-06T08:52:44.799Z",
+            "created": "2023-09-26T17:57:18.549Z",
+            "modified": "2023-10-03T10:15:41.648Z",
             "headers": [],
             "params": [],
             "body": {
@@ -119,15 +176,15 @@
             "tests": []
         },
         {
-            "_id": "1cbacf2b-55dd-4b39-96b6-d2579f76f8f3",
-            "colId": "2af39bcf-7a6e-495e-b71c-f6b8057d5ae7",
-            "containerId": "1dde1bf9-d19f-4176-9735-c5017f0353d2",
+            "_id": "8f2328f1-0557-474b-9c7e-12f70fee94ac",
+            "colId": "2077afd5-9f0d-40f1-98dd-819c2334cd0a",
+            "containerId": "0c6534c0-6a63-4f62-9630-8eace90cdbd1",
             "name": "deleteScheduleJob",
             "url": "http://localhost:1631/api/v1/scheduleJob/deleteSchedule?id=371e0431-10cc-5b98-b1da-795050112d92",
             "method": "DELETE",
             "sortNum": 30000,
-            "created": "2023-10-06T08:52:44.797Z",
-            "modified": "2023-10-06T08:52:44.797Z",
+            "created": "2023-09-26T17:57:18.547Z",
+            "modified": "2023-09-26T17:57:18.547Z",
             "headers": [],
             "params": [
                 {
@@ -139,137 +196,69 @@
             "tests": []
         },
         {
-            "_id": "747dd00e-db84-482e-a6f7-052542805aea",
-            "colId": "2af39bcf-7a6e-495e-b71c-f6b8057d5ae7",
-            "containerId": "51125328-1fac-4e2c-8c50-c8a98edbb065",
+            "_id": "278bde2c-0ceb-494b-baf9-4d5bc06622c3",
+            "colId": "2077afd5-9f0d-40f1-98dd-819c2334cd0a",
+            "containerId": "587ac24a-0d03-49be-ac0c-de6fe99b7383",
             "name": "deleteScheduleClass",
-            "url": "http://localhost:1631/api/v1/scheduleClass/deleteSchedule?start=2023-09-18T00:00:00&end=2023-09-19T24:00:00",
+            "url": "http://localhost:1631/api/v1/scheduleClass/deleteSchedule?start=2023-10-30T00:00:00&end=2023-11-05T23:00:00 ",
             "method": "DELETE",
             "sortNum": 30000,
-            "created": "2023-10-06T08:52:44.800Z",
-            "modified": "2023-10-06T08:52:44.800Z",
+            "created": "2023-09-26T17:57:18.550Z",
+            "modified": "2023-10-07T12:55:52.395Z",
             "headers": [],
             "params": [
                 {
                     "name": "start",
-                    "value": "2023-09-18T00:00:00",
+                    "value": "2023-10-30T00:00:00",
                     "isPath": false
                 },
                 {
                     "name": "end",
-                    "value": "2023-09-19T24:00:00",
+                    "value": "2023-11-05T23:00:00 ",
                     "isPath": false
                 }
             ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTIwOGRlNTY2YTE0N2E4YjBmNDIwOWEiLCJpYXQiOjE2OTY2ODI1MDgsImV4cCI6MTY5NjY4MzQwOH0.VTWzxXuVg75tz9boDomHaa2tZTyboMov5DTniNstSZM"
+            },
             "tests": []
         },
         {
-            "_id": "303c8d4b-d655-41ab-8d28-fc5e342df64a",
-            "colId": "2af39bcf-7a6e-495e-b71c-f6b8057d5ae7",
-            "containerId": "ff5d477c-a73d-4982-91fb-d2bbf1aa512a",
+            "_id": "6f99ab9f-9c17-4765-873d-46f24dcc10ba",
+            "colId": "2077afd5-9f0d-40f1-98dd-819c2334cd0a",
+            "containerId": "caf2e41c-2e92-4c4e-8c08-74d62e9a400c",
             "name": "login",
             "url": "http://localhost:1631/api/v1/guest/login",
             "method": "POST",
             "sortNum": 40000,
-            "created": "2023-10-06T08:52:44.802Z",
-            "modified": "2023-10-27T20:25:09.617Z",
+            "created": "2023-10-05T12:47:47.589Z",
+            "modified": "2023-10-07T12:44:12.300Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"email\": \"petris.mael02@gmail.com\",\n  \"password\": \"Jenesaispas00\"\n}",
+                "raw": "{\n  \"email\": \"samuelpeybernes33@gmail.com\",\n  \"password\": \"test\"\n}",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "b0b7bbb8-4283-4c9a-a33c-1881f2cb782c",
-            "colId": "2af39bcf-7a6e-495e-b71c-f6b8057d5ae7",
-            "containerId": "ff5d477c-a73d-4982-91fb-d2bbf1aa512a",
-            "name": "refreshToken",
-            "url": "http://localhost:1631/api/v1/guest/refresh-token",
-            "method": "POST",
-            "sortNum": 45000,
-            "created": "2023-10-06T10:41:54.428Z",
-            "modified": "2023-10-06T15:22:52.615Z",
-            "headers": [],
-            "params": [],
-            "body": {
-                "type": "json",
-                "raw": "{\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTFlYjgzZDI0YWQyN2IxNTg0MTM0ZTgiLCJpYXQiOjE2OTY2MDQ5NDQsImV4cCI6MTY5OTE5Njk0NH0.YzAVbTJX-P81C-PbjwRZ9J_KhvyMmWyr4o08N5Jcn9A\"\n}",
-                "form": []
-            },
-            "tests": []
-        },
-        {
-            "_id": "bc8e2487-82e1-417f-9cac-86179a0da1f4",
-            "colId": "2af39bcf-7a6e-495e-b71c-f6b8057d5ae7",
-            "containerId": "ff5d477c-a73d-4982-91fb-d2bbf1aa512a",
+            "_id": "d9a15aef-1e3b-460a-a346-52bd8dbf041b",
+            "colId": "2077afd5-9f0d-40f1-98dd-819c2334cd0a",
+            "containerId": "caf2e41c-2e92-4c4e-8c08-74d62e9a400c",
             "name": "register",
             "url": "http://localhost:1631/api/v1/guest/register",
             "method": "POST",
             "sortNum": 50000,
-            "created": "2023-10-06T08:52:44.803Z",
-            "modified": "2023-11-03T16:43:18.689Z",
+            "created": "2023-10-05T13:18:34.745Z",
+            "modified": "2023-10-05T13:48:05.974Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"name\": \"dddd\",\n  \"email\": \"test\",\n  \"password\": \"dddd\"\n}",
+                "raw": "{\n  \"name\": \"Samuel\",\n  \"email\": \"eeee@gmail.com\",\n  \"password\": \"test\"\n}",
                 "form": []
-            },
-            "tests": []
-        },
-        {
-            "_id": "3b3f5881-f3ae-4f2f-b9fe-758e59020203",
-            "colId": "2af39bcf-7a6e-495e-b71c-f6b8057d5ae7",
-            "containerId": "ff5d477c-a73d-4982-91fb-d2bbf1aa512a",
-            "name": "updateCustom",
-            "url": "http://localhost:1631/api/v1/user/postCustomization?_id=65208de566a147a8b0f4209a",
-            "method": "POST",
-            "sortNum": 60000,
-            "created": "2023-10-27T21:20:21.328Z",
-            "modified": "2023-11-03T23:04:56.036Z",
-            "headers": [],
-            "params": [
-                {
-                    "name": "_id",
-                    "value": "65208de566a147a8b0f4209a",
-                    "isPath": false
-                }
-            ],
-            "body": {
-                "type": "json",
-                "raw": "{\n  \"userJoi\": {\n    \"maxEventHoursPerDay\": 19,\n    \"lunchBreakStartHour\": 11,\n    \"lunchBreakEndHour\": 13,\n    \"startHour\": 9\n  }\n}",
-                "form": []
-            },
-            "auth": {
-                "type": "bearer",
-                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTIwOGRlNTY2YTE0N2E4YjBmNDIwOWEiLCJpYXQiOjE2OTg0NDU4NTcsImV4cCI6MTY5ODQ0Njc1N30.MNxUWAyu8K_6LPlb_75eWOCoUf6aZj8zw89XeMv2_X8"
-            },
-            "tests": []
-        },
-        {
-            "_id": "bd7f29b1-c413-460d-a2b5-78ec46ba0412",
-            "colId": "2af39bcf-7a6e-495e-b71c-f6b8057d5ae7",
-            "containerId": "ff5d477c-a73d-4982-91fb-d2bbf1aa512a",
-            "name": "getProfil",
-            "url": "http://localhost:1631/api/v1/user/getCustomization?_id=65208de566a147a8b0f4209a",
-            "method": "GET",
-            "sortNum": 70000,
-            "created": "2023-10-27T22:28:49.470Z",
-            "modified": "2023-11-03T23:02:09.698Z",
-            "headers": [],
-            "params": [
-                {
-                    "name": "_id",
-                    "value": "65208de566a147a8b0f4209a",
-                    "isPath": false
-                }
-            ],
-            "auth": {
-                "type": "bearer",
-                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTIwOGRlNTY2YTE0N2E4YjBmNDIwOWEiLCJpYXQiOjE2OTg0NDU4NTcsImV4cCI6MTY5ODQ0Njc1N30.MNxUWAyu8K_6LPlb_75eWOCoUf6aZj8zw89XeMv2_X8"
             },
             "tests": []
         }
