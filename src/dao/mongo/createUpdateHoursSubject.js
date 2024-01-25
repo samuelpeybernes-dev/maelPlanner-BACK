@@ -8,7 +8,7 @@ async function createUpdateHoursSubject(user_id, hoursSubjectJoi) {
     if (!correspondingUser || undefined) {
       throw new Error('User not found for id:' + user_id)
     }
-
+    let updatedSubjects = []
     for (const hoursSubjectItem of hoursSubjectJoi) {
       const { id, newText, newBackColor, newBorderColor, newWeekHours } = hoursSubjectItem
       console.log('🚀 ~ createUpdateHoursSubject ~ hoursSubjectItem:', hoursSubjectItem)
@@ -26,6 +26,7 @@ async function createUpdateHoursSubject(user_id, hoursSubjectJoi) {
         // Mettre à jour le document dans la base de données
         await existingHoursSubject.save()
         console.log('Hours subject updated for id:', id)
+        updatedSubjects.push(existingHoursSubject)
       } else {
         // Le document n'existe pas, vous pouvez en créer un nouveau ici
         const newHoursSubject = new hoursSubject({
@@ -39,8 +40,10 @@ async function createUpdateHoursSubject(user_id, hoursSubjectJoi) {
         // Enregistrer le nouveau document dans la base de données
         await newHoursSubject.save()
         console.log('New Hours subject created for id:', id)
+        updatedSubjects.push(newHoursSubject)
       }
     }
+    return updatedSubjects
   } catch (error) {
     return error
   }
