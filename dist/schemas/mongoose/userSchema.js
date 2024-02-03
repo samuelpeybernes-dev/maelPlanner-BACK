@@ -15,6 +15,7 @@ const userSchema = new Schema({
     lunchBreakStartHour: Number,
     lunchBreakEndHour: Number,
     startHour: Number,
+    birthday: Date,
 }, {
     collection: 'user',
     versionKey: false,
