@@ -23,7 +23,7 @@ async function resetPasswordRequest(req, res) {
             createdAt: Date.now(),
         }).save();
         const link = `planner.samuelpeybernesdev.fr/passwordReset?token=${accessToken}&id=${user._id}`;
-        (0, sendEmail_1.default)(user.email, 'Password Reset Request', { name: user.name, link: link }, './template/requestResetPassword.handlebars');
+        await (0, sendEmail_1.default)(user.email, 'Password Reset Request', { name: user.name, link: link }, './template/requestResetPassword.handlebars');
         return res.json(link);
     }
     catch (error) {
