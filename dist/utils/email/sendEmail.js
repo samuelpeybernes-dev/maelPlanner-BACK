@@ -1,13 +1,13 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const nodemailer = require('nodemailer');
 const handlebars = require('handlebars');
 const fs = require('fs');
 const path = require('path');
-const sendEmail = async (email, subject, payload, template) => {
+exports.default = async (email, subject, payload, template) => {
     try {
         // create reusable transporter object using the default SMTP transport
         const transporter = nodemailer.createTransport({
-            service: 'Gmail',
             host: 'smtp.gmail.com',
             port: 465,
             secure: true,
@@ -69,5 +69,4 @@ sendEmail(
   "./templates/layouts/main.handlebars"
 );
 */
-module.exports = sendEmail;
 //# sourceMappingURL=sendEmail.js.map

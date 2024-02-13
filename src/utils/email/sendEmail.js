@@ -3,11 +3,10 @@ const handlebars = require('handlebars')
 const fs = require('fs')
 const path = require('path')
 
-const sendEmail = async (email, subject, payload, template) => {
+export default async (email, subject, payload, template) => {
   try {
     // create reusable transporter object using the default SMTP transport
     const transporter = nodemailer.createTransport({
-      service: 'Gmail',
       host: 'smtp.gmail.com',
       port: 465,
       secure: true,
@@ -70,5 +69,3 @@ sendEmail(
   "./templates/layouts/main.handlebars"
 );
 */
-
-module.exports = sendEmail
