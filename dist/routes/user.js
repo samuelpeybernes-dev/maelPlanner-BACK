@@ -9,5 +9,7 @@ const validateIncomingData_js_1 = __importDefault(require("../middlewares/valida
 const router = express_1.default.Router();
 router.route('/postCustomization').post(validateIncomingData_js_1.default, user_1.apiPostCustom);
 router.route('/getCustomization').get(user_1.apiGetProfil);
+router.route('/resetPasswordRequest').post(user_1.resetPasswordRequest);
+router.route('/resetPassword').post(user_1.resetPassword);
 exports.default = router;
 //# sourceMappingURL=user.js.map

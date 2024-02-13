@@ -10,8 +10,8 @@ const sendEmail = async (email, subject, payload, template) => {
       host: 'smtp.gmail.com',
       port: 465,
       auth: {
-        user: 'samuelpeybernes33@gmail.com',
-        pass: 'Lordsam.30127', // naturally, replace both with your real credentials or an application-specific password
+        user: 'contactsamuelpeybernes@gmail.com',
+        pass: 'zstv mwws bcts fjsp', // naturally, replace both with your real credentials or an application-specific password
       },
     })
 
@@ -19,7 +19,7 @@ const sendEmail = async (email, subject, payload, template) => {
     const compiledTemplate = handlebars.compile(source)
     const options = () => {
       return {
-        from: "samuelpeybernes33@gmail.com",
+        from: 'samuelpeybernes33@gmail.com',
         to: email,
         subject: subject,
         html: compiledTemplate(payload),

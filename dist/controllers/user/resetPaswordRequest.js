@@ -6,16 +6,25 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const userSchema_js_1 = __importDefault(require("../../schemas/mongoose/userSchema.js"));
 const generateToken_1 = __importDefault(require("../../utils/generateToken"));
 const sendEmail_1 = __importDefault(require("../../utils/email/sendEmail"));
+const tokenSchema_js_1 = __importDefault(require("../../schemas/mongoose/tokenSchema.js"));
 async function resetPasswordRequest(req, res) {
     try {
         const { email } = req.body;
         const user = await userSchema_js_1.default.findOne({ email });
         if (!user)
             throw new Error('User does not exist');
+        let token = await tokenSchema_js_1.default.findOne({ userId: user._id });
+        if (token)
+            await token.deleteOne();
         const { accessToken, refreshToken } = await (0, generateToken_1.default)(user._id, user.email);
-        const link = `https://planner.samuelpeybernesdev.fr/passwordReset?token=${accessToken}&id=${user._id}`;
-        (0, sendEmail_1.default)('samuel.peybernes@ecoles-epsi.net', 'Password Reset Request', { name: user.name, link: link }, './template/requestResetPassword.handlebars');
-        return link;
+        await new tokenSchema_js_1.default({
+            userId: user._id,
+            token: accessToken,
+            createdAt: Date.now(),
+        }).save();
+        const link = `planner.samuelpeybernesdev.fr/passwordReset?token=${accessToken}&id=${user._id}`;
+        (0, sendEmail_1.default)(user.email, 'Password Reset Request', { name: user.name, link: link }, './template/requestResetPassword.handlebars');
+        return res.json(link);
     }
     catch (error) {
         console.error(error);
