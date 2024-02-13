@@ -20,15 +20,15 @@ const sendEmail = async (email, subject, payload, template) => {
     await new Promise((resolve, reject) => {
       // verify connection configuration
       transporter.verify(function (error, success) {
-          if (error) {
-              console.log(error);
-              reject(error);
-          } else {
-              console.log("Server is ready to take our messages");
-              resolve(success);
-          }
-      });
-  });
+        if (error) {
+          console.log(error)
+          reject(error)
+        } else {
+          console.log('Server is ready to take our messages')
+          resolve(success)
+        }
+      })
+    })
 
     const source = fs.readFileSync(path.join(__dirname, template), 'utf8')
     const compiledTemplate = handlebars.compile(source)
@@ -45,15 +45,16 @@ const sendEmail = async (email, subject, payload, template) => {
     await new Promise((resolve, reject) => {
       transporter.sendMail(options(), (error, info) => {
         if (error) {
-          return error
-          reject(err);
+          console.error(err)
+          reject(err)
         } else {
-          return res.status(200).json({
-            success: true,
-          })
-          resolve(info);
+          console.log(info)
+          resolve(info)
         }
       })
+    })
+    return res.status(200).json({
+      success: true,
     })
   } catch (error) {
     return error

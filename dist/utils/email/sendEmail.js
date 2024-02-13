@@ -24,7 +24,7 @@ const sendEmail = async (email, subject, payload, template) => {
                     reject(error);
                 }
                 else {
-                    console.log("Server is ready to take our messages");
+                    console.log('Server is ready to take our messages');
                     resolve(success);
                 }
             });
@@ -43,16 +43,17 @@ const sendEmail = async (email, subject, payload, template) => {
         await new Promise((resolve, reject) => {
             transporter.sendMail(options(), (error, info) => {
                 if (error) {
-                    return error;
+                    console.error(err);
                     reject(err);
                 }
                 else {
-                    return res.status(200).json({
-                        success: true,
-                    });
+                    console.log(info);
                     resolve(info);
                 }
             });
+        });
+        return res.status(200).json({
+            success: true,
         });
     }
     catch (error) {
