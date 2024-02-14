@@ -24,9 +24,9 @@ async function resetPassword(req, res) {
 
     sendEmail(
       user.email,
-      'Password Reset Successfully',
+      'Mot de passe réinitialisé avec succès ✅🔑',
       {
-        name: user.name,
+        name: user.firstName,
       },
       './template/resetPassword.handlebars'
     )
