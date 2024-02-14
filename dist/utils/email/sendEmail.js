@@ -6,8 +6,8 @@ const fs = require('fs');
 const path = require('path');
 exports.default = async (email, subject, payload, template) => {
     try {
-        // const source = fs.readFileSync(path.join(__dirname, template), 'utf8')
-        // const compiledTemplate = handlebars.compile(source)
+        const source = fs.readFileSync(path.join(__dirname, template), 'utf8');
+        const compiledTemplate = handlebars.compile(source);
         await nodemailer
             .createTransport({
             host: 'smtp.gmail.com',
@@ -22,7 +22,7 @@ exports.default = async (email, subject, payload, template) => {
             from: process.env.SMTP_USER,
             to: email,
             subject,
-            html: 'test',
+            html: compiledTemplate(payload),
         });
         console.log('Email sent to ' + email);
     }
