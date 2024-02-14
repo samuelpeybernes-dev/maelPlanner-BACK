@@ -23,7 +23,7 @@ async function resetPasswordRequest(req, res) {
 
     const link = `planner.samuelpeybernesdev.fr/passwordReset?token=${accessToken}&id=${user._id}`
     await sendEmail(user.email, 'Demande de changement de mot de passe ?', { name: user.firstName, link: link }, './template/requestResetPassword.handlebars')
-    return res.json(link)
+    return res.status(200).json(link)
   } catch (error) {
     console.error(error)
     return res.status(500).json({ error: error })
