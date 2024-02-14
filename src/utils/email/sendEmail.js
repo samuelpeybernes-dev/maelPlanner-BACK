@@ -31,18 +31,16 @@ export default async (email, subject, payload, template) => {
 
     const source = fs.readFileSync(path.join(__dirname, template), 'utf8')
     const compiledTemplate = handlebars.compile(source)
-    const options = () => {
-      return {
-        from: process.env.SMTP_USER,
-        to: email,
-        subject: subject,
-        html: compiledTemplate(payload),
-      }
+    const options = {
+      from: process.env.SMTP_USER,
+      to: email,
+      subject: subject,
+      html: compiledTemplate(payload),
     }
 
     // Send email
     await new Promise((resolve, reject) => {
-      transporter.sendMail(options(), (error, info) => {
+      transporter.sendMail(options, function (error, info) {
         if (error) {
           console.error(err)
           reject(err)
