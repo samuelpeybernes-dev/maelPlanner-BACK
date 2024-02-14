@@ -9,5 +9,6 @@ const router = express_1.default.Router();
 router.route('/login').post(user_1.apiPostLogin);
 router.route('/register').post(user_1.apiPostRegister);
 router.route('/refresh-token').post(user_1.apiPostRefreshToken);
+router.route('/resetPasswordRequest').post(user_1.resetPasswordRequest);
 exports.default = router;
 //# sourceMappingURL=guest.js.map
