@@ -22,7 +22,7 @@ async function resetPassword(req, res) {
         const hash = await bcrypt_1.default.hashSync(password, 10);
         await (0, updateUserById_1.default)(userId, { password: hash });
         const user = await userSchema_js_1.default.findById({ _id: userId });
-        (0, sendEmail_1.default)(user.email, 'Mot de passe réinitialisé avec succès ✅🔑', {
+        await (0, sendEmail_1.default)(user.email, 'Mot de passe réinitialisé avec succès ✅🔑', {
             name: user.firstName,
         }, './template/resetPassword.handlebars');
         await passwordResetToken.deleteOne();

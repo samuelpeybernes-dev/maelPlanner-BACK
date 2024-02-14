@@ -22,7 +22,7 @@ async function resetPassword(req, res) {
     await updateUserById(userId, { password: hash })
     const user = await userSchema.findById({ _id: userId })
 
-    sendEmail(
+    await sendEmail(
       user.email,
       'Mot de passe réinitialisé avec succès ✅🔑',
       {
