@@ -22,7 +22,7 @@ exports.default = async (email, subject, payload, template) => {
             from: process.env.SMTP_USER,
             to: email,
             subject,
-            html: compiledTemplate(payload),
+            html: 'test',
         });
         console.log('Email sent to ' + email);
     }
