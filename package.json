@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon",
     "start": "node -r ts-node/register/transpile-only -r tsconfig-paths/register ./dist/index.js",
-    "build": "rimraf dist && tsc",
+    "build": "rimraf dist && tsc && cpx \"./src/email/template/**/*\" ./dist/email/template --clean",
     "copy-env": "cp .env.example dist/.env.example && cp -r ./logs dist/logs",
     "ts.check": "tsc --project tsconfig.json",
     "add-build": "git add dist",
@@ -64,6 +64,7 @@
     "@typescript-eslint/parser": "^4.33.0",
     "babel": "^6.23.0",
     "babel-jest": "^27.4.5",
+    "cpx": "^1.5.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
