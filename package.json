@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "nodemon",
     "start": "node -r ts-node/register/transpile-only -r tsconfig-paths/register ./dist/index.js",
-    "build": "rimraf dist && tsc && cpx \"./src/email/template/**/*\" ./dist/email/template --clean",
-    "copy-env": "cp .env.example dist/.env.example && cp -r ./logs dist/logs",
+    "build": "rimraf dist && tsc ",
+    "copy-env": "cp .env.example dist/.env.example && cp -r ./logs dist/logs && cpx \"./src/email/template/**/*\" ./dist/email/template --clean",
     "ts.check": "tsc --project tsconfig.json",
     "add-build": "git add dist",
     "test": "jest"
