@@ -35,7 +35,7 @@ exports.default = async (email, subject, payload, template) => {
             from: process.env.SMTP_USER,
             to: email,
             subject: subject,
-            html: compiledTemplate(payload),
+            html: "test",
         };
         // Send email
         await new Promise((resolve, reject) => {
