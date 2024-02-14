@@ -39,7 +39,7 @@ exports.default = async (email, subject, payload, template) => {
         };
         // Send email
         await new Promise((resolve, reject) => {
-            transporter.sendMail(options, (err, info) => {
+            transporter.sendMail(options).then((info, err) => {
                 if (err) {
                     console.error(err);
                     reject(err);
