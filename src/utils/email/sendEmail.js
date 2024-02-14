@@ -35,13 +35,13 @@ export default async (email, subject, payload, template) => {
       from: process.env.SMTP_USER,
       to: email,
       subject: subject,
-      html: "test",
+      html: 'test',
     }
 
     // Send email
     await new Promise((resolve, reject) => {
-      transporter.sendMail(options, function (error, info) {
-        if (error) {
+      transporter.sendMail(options, (err, info) => {
+        if (err) {
           console.error(err)
           reject(err)
         } else {
