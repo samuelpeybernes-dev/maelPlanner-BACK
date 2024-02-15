@@ -9,7 +9,8 @@ const sendEmail_1 = __importDefault(require("../../utils/email/sendEmail"));
 const tokenSchema_js_1 = __importDefault(require("../../schemas/mongoose/tokenSchema.js"));
 async function resetPasswordRequest(req, res) {
     try {
-        const { email } = req.body;
+        const { userJoi } = req.body;
+        const { email } = userJoi;
         const user = await userSchema_js_1.default.findOne({ email });
         if (!user)
             throw new Error('User does not exist');

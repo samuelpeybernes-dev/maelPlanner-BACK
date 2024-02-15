@@ -6,6 +6,6 @@ const router = express.Router()
 
 router.route('/postCustomization').post(validateIncomingData, apiPostCustom)
 router.route('/getCustomization').get(apiGetProfil)
-router.route('/resetPassword').post(resetPassword)
+router.route('/resetPassword').post(validateIncomingData, resetPassword)
 
 export default router

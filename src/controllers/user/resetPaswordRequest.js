@@ -5,7 +5,8 @@ import tokenSchema from '../../schemas/mongoose/tokenSchema.js'
 
 async function resetPasswordRequest(req, res) {
   try {
-    const { email } = req.body
+    const { userJoi } = req.body
+    const { email } = userJoi
     const user = await userSchema.findOne({ email })
 
     if (!user) throw new Error('User does not exist')

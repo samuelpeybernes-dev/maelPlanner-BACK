@@ -9,6 +9,8 @@ const userSchema = Joi.object({
   lunchBreakStartHour: Joi.number(),
   lunchBreakEndHour: Joi.number(),
   startHour: Joi.number(),
+  userId: Joi.string(),
+  token: Joi.string(),
 })
 
 export default userSchema

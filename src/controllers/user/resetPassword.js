@@ -6,7 +6,8 @@ import sendEmail from '../../utils/email/sendEmail'
 
 async function resetPassword(req, res) {
   try {
-    const { userId, token, password } = req.body
+    const { userJoi } = req.body
+    const { userId, token, password } = userJoi
     let passwordResetToken = await tokenSchema.findOne({ userId })
     if (!passwordResetToken) {
       throw new Error('Invalid or expired password reset token')

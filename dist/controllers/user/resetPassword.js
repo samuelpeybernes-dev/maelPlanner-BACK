@@ -10,7 +10,8 @@ const userSchema_js_1 = __importDefault(require("../../schemas/mongoose/userSche
 const sendEmail_1 = __importDefault(require("../../utils/email/sendEmail"));
 async function resetPassword(req, res) {
     try {
-        const { userId, token, password } = req.body;
+        const { userJoi } = req.body;
+        const { userId, token, password } = userJoi;
         let passwordResetToken = await tokenSchema_js_1.default.findOne({ userId });
         if (!passwordResetToken) {
             throw new Error('Invalid or expired password reset token');

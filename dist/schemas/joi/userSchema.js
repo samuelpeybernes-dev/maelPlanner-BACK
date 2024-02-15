@@ -13,6 +13,8 @@ const userSchema = joi_1.default.object({
     lunchBreakStartHour: joi_1.default.number(),
     lunchBreakEndHour: joi_1.default.number(),
     startHour: joi_1.default.number(),
+    userId: joi_1.default.string(),
+    token: joi_1.default.string(),
 });
 exports.default = userSchema;
 //# sourceMappingURL=userSchema.js.map

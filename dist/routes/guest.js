@@ -5,10 +5,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const user_1 = require("../controllers/user");
+const validateIncomingData_js_1 = __importDefault(require("../middlewares/validateIncomingData.js"));
 const router = express_1.default.Router();
 router.route('/login').post(user_1.apiPostLogin);
 router.route('/register').post(user_1.apiPostRegister);
 router.route('/refresh-token').post(user_1.apiPostRefreshToken);
-router.route('/resetPasswordRequest').post(user_1.resetPasswordRequest);
+router.route('/resetPasswordRequest').post(validateIncomingData_js_1.default, user_1.resetPasswordRequest);
 exports.default = router;
 //# sourceMappingURL=guest.js.map
